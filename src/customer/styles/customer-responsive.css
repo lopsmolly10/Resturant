@@ -1,0 +1,90 @@
+/* =========================================================
+   CUSTOMER INTERFACE RESPONSIVE STYLES
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero-stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    margin: -30px 20px 40px;
+    padding: 20px;
+  }
+
+  .cart-layout-grid,
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-nav-links {
+    display: none;
+  }
+
+  .customer-hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .customer-hero p {
+    font-size: 1rem;
+  }
+
+  .hero-stats-bar {
+    grid-template-columns: 1fr;
+    margin: 20px 0;
+  }
+
+  .customer-food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .special-offers-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dining-type-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .order-tracker-steps {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .order-tracker-line-bg,
+  .order-tracker-line-fill {
+    display: none;
+  }
+
+  .tracker-step-node {
+    flex-direction: row;
+    width: 100%;
+    text-align: left;
+    gap: 14px;
+  }
+
+  .cart-item-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-total {
+    text-align: left;
+  }
+}
+

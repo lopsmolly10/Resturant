@@ -1,0 +1,292 @@
+:root {
+  /* Brand Palette */
+  --primary-forest: #183D32;
+  --primary-olive: #496B50;
+  --bg-cream: #F8F5EF;
+  --card-ivory: #FFFDF8;
+  --accent-terracotta: #C66B45;
+  --accent-gold: #C6A15B;
+  --text-charcoal: #292D2B;
+  --border-grey: #E9E7E0;
+
+  /* Variations & Helpers */
+  --primary-forest-hover: #122d25;
+  --primary-forest-light: #204f41;
+  --primary-olive-light: #e8efe9;
+  --accent-terracotta-hover: #b05a35;
+  --accent-terracotta-light: #faece6;
+  --accent-gold-light: #fbf6ec;
+  --accent-gold-hover: #b38e47;
+  --text-muted: #6c736e;
+  --text-light: #9ba19d;
+  --bg-hover: #f1ede3;
+  --white: #ffffff;
+  --surface-alt: #f3efe7;
+
+  /* Status Colors */
+  --status-pending-bg: #fff8e6;
+  --status-pending-text: #b7791f;
+  --status-pending-border: #fbd38d;
+
+  --status-preparing-bg: #ebf8ff;
+  --status-preparing-text: #2b6cb0;
+  --status-preparing-border: #bee3f8;
+
+  --status-ready-bg: #faf5ff;
+  --status-ready-text: #6b46c1;
+  --status-ready-border: #e9d8fd;
+
+  --status-served-bg: #f0fff4;
+  --status-served-text: #22543d;
+  --status-served-border: #c6f6d5;
+
+  --status-cancelled-bg: #fff5f5;
+  --status-cancelled-text: #9b2c2c;
+  --status-cancelled-border: #fed7d7;
+
+  --status-lowstock-bg: #fffaf0;
+  --status-lowstock-text: #c05621;
+  --status-lowstock-border: #feebc8;
+
+  /* Shadows & Elevation */
+  --shadow-sm: 0 1px 2px rgba(24, 61, 50, 0.05);
+  --shadow-md: 0 4px 12px rgba(24, 61, 50, 0.08);
+  --shadow-lg: 0 10px 25px rgba(24, 61, 50, 0.12);
+  --shadow-xl: 0 20px 40px rgba(24, 61, 50, 0.16);
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 78px;
+  --navbar-height: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-charcoal);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: var(--primary-forest);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Button Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: var(--primary-forest);
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(24, 61, 50, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-forest-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(24, 61, 50, 0.3);
+}
+
+.btn-secondary {
+  background-color: var(--accent-terracotta);
+  color: var(--white);
+  box-shadow: 0 2px 6px rgba(198, 107, 69, 0.25);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--accent-terracotta-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(198, 107, 69, 0.35);
+}
+
+.btn-gold {
+  background-color: var(--accent-gold);
+  color: var(--primary-forest);
+  font-weight: 700;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background-color: var(--accent-gold-hover);
+  color: var(--white);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-grey);
+  color: var(--text-charcoal);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--bg-hover);
+  border-color: #d1cfc7;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: 1px solid var(--primary-forest);
+  color: var(--primary-forest);
+}
+
+.btn-outline-primary:hover:not(:disabled) {
+  background-color: var(--primary-olive-light);
+}
+
+.btn-danger {
+  background-color: #e53e3e;
+  color: var(--white);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #c53030;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-icon {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Common Card */
+.card {
+  background-color: var(--card-ivory);
+  border: 1px solid var(--border-grey);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8c5bc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-olive);
+}
+
+/* Toast Container */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--primary-forest);
+  color: var(--white);
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-left: 4px solid var(--accent-gold);
+  animation: slideInUp 0.25s ease-out;
+  max-width: 420px;
+}
+
+.toast.toast-error {
+  border-left-color: #e53e3e;
+}
+
+.toast.toast-info {
+  border-left-color: #3182ce;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
