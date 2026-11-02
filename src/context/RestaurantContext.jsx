@@ -1,4 +1,11 @@
-import React, { createContext, useContext, useState, useMemo } from 'react';
+import React, { createContext, useContext, useState, useMemo, useEffect, useCallback } from 'react';
+import {
+  isSupabaseConfigured,
+  getInventoryIngredients,
+  insertInventoryIngredient,
+  updateInventoryIngredient,
+  deleteInventoryIngredient
+} from '../lib/supabaseClient';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import {
   initialMenuItems,
@@ -22,6 +29,41 @@ export function RestaurantProvider({ children }) {
   const [tables, setTables] = useLocalStorage('dinepoint_tables', initialTables);
   const [reservations, setReservations] = useLocalStorage('dinepoint_reservations', initialReservations);
   const [inventory, setInventory] = useLocalStorage('dinepoint_inventory', initialInventory);
+  const [isInventoryLoading, setIsInventoryLoading] = useState(false);
+  const [isSupabaseConnected, setIsSupabaseConnected] = useState(isSupabaseConfigured);
+
+  const refreshInventory = useCallback(async (silent = false) => {
+    if (!isSupabaseConfigured) return;
+    setIsInventoryLoading(true);
+    try {
+      const { data, error } = await getInventoryIngredients();
+      if (error) {
+        setIsSupabaseConnected(false);
+        if (!silent) {
+          showToast(`Supabase notice: ${error.message || 'Unable to fetch inventory'}`, 'error');
+        }
+      } else if (data) {
+        setIsSupabaseConnected(true);
+        if (data.length > 0) {
+          setInventory(data);
+        }
+        if (!silent) {
+          showToast('Inventory reloaded from Supabase');
+        }
+      }
+    } catch (err) {
+      console.error('[Supabase] Error fetching inventory:', err);
+      setIsSupabaseConnected(false);
+    } finally {
+      setIsInventoryLoading(false);
+    }
+  }, [setInventory]);
+
+  useEffect(() => {
+    if (isSupabaseConfigured) {
+      refreshInventory(true);
+    }
+  }, [refreshInventory]);
   const [payments, setPayments] = useLocalStorage('dinepoint_payments', initialPayments);
   const [customers, setCustomers] = useLocalStorage('dinepoint_customers', initialCustomers);
   const [users, setUsers] = useLocalStorage('dinepoint_users', initialUsers);
@@ -298,12 +340,25 @@ export function RestaurantProvider({ children }) {
   };
 
   // =================== INVENTORY ===================
-  const addInventoryItem = (itemData) => {
+  const addInventoryItem = async (itemData) => {
     const qty = Number(itemData.quantity) || 0;
     const reorder = Number(itemData.reorderLevel) || 10;
     let status = 'In Stock';
     if (qty === 0) status = 'Out of Stock';
     else if (qty <= reorder) status = 'Low Stock';
+
+    if (isSupabaseConfigured) {
+      const { data, error } = await insertInventoryIngredient(itemData);
+      if (error) {
+        showToast(`Supabase Error: ${error.message || 'Failed to save to database'}`, 'error');
+        throw error;
+      }
+      if (data) {
+        setInventory(prev => [data, ...prev.filter(i => i.id !== data.id)]);
+        showToast(`Added "${data.name}" to Supabase inventory!`);
+        return data;
+      }
+    }
 
     const newItem = {
       ...itemData,
@@ -316,11 +371,24 @@ export function RestaurantProvider({ children }) {
     };
 
     setInventory(prev => [newItem, ...prev]);
-    showToast(`Added ${newItem.name} to inventory!`);
+    showToast(`Added "${newItem.name}" to inventory!`);
     return newItem;
   };
 
-  const updateInventoryItem = (id, fields) => {
+  const updateInventoryItem = async (id, fields) => {
+    if (isSupabaseConfigured) {
+      const { data, error } = await updateInventoryIngredient(id, fields);
+      if (error) {
+        showToast(`Supabase Update Error: ${error.message || 'Failed to update item'}`, 'error');
+        throw error;
+      }
+      if (data) {
+        setInventory(prev => prev.map(item => (item.id === id ? data : item)));
+        showToast(`Updated "${data.name}" successfully!`);
+        return data;
+      }
+    }
+
     setInventory(prev =>
       prev.map(item => {
         if (item.id === id) {
@@ -345,29 +413,40 @@ export function RestaurantProvider({ children }) {
     showToast('Inventory item updated successfully!');
   };
 
-  const adjustInventoryQuantity = (id, delta) => {
-    setInventory(prev =>
-      prev.map(item => {
-        if (item.id === id) {
-          const newQty = Math.max(0, item.quantity + delta);
-          let status = 'In Stock';
-          if (newQty <= 0) status = 'Out of Stock';
-          else if (newQty <= item.reorderLevel) status = 'Low Stock';
+  const adjustInventoryQuantity = async (id, delta) => {
+    const item = inventory.find(i => i.id === id);
+    if (!item) return;
 
-          return {
-            ...item,
-            quantity: newQty,
-            status,
-            lastUpdated: new Date().toISOString().split('T')[0]
-          };
-        }
-        return item;
-      })
+    const newQty = Math.max(0, item.quantity + delta);
+    let status = 'In Stock';
+    if (newQty <= 0) status = 'Out of Stock';
+    else if (newQty <= item.reorderLevel) status = 'Low Stock';
+
+    setInventory(prev =>
+      prev.map(i =>
+        i.id === id
+          ? { ...i, quantity: newQty, status, lastUpdated: new Date().toISOString().split('T')[0] }
+          : i
+      )
     );
+
+    if (isSupabaseConfigured) {
+      const { error } = await updateInventoryIngredient(id, { quantity: newQty });
+      if (error) {
+        console.warn('Failed to sync adjusted quantity to Supabase:', error);
+      }
+    }
   };
 
-  const deleteInventoryItem = (id) => {
+  const deleteInventoryItem = async (id) => {
     const item = inventory.find(i => i.id === id);
+    if (isSupabaseConfigured) {
+      const { error } = await deleteInventoryIngredient(id);
+      if (error) {
+        showToast(`Supabase Delete Error: ${error.message || 'Failed to delete item'}`, 'error');
+        return;
+      }
+    }
     setInventory(prev => prev.filter(i => i.id !== id));
     showToast(`Removed "${item?.name || 'Item'}" from inventory`, 'info');
   };
@@ -508,6 +587,9 @@ export function RestaurantProvider({ children }) {
         deleteReservation,
 
         inventory,
+        isInventoryLoading,
+        isSupabaseConnected,
+        refreshInventory,
         addInventoryItem,
         updateInventoryItem,
         adjustInventoryQuantity,
