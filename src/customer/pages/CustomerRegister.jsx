@@ -85,17 +85,18 @@ export default function CustomerRegister() {
               width: '52px',
               height: '52px',
               borderRadius: '14px',
-              background: 'linear-gradient(135deg, var(--accent-gold), #997837)',
+              background: 'linear-gradient(135deg, var(--royal-blue), var(--medium-blue))',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'var(--primary-forest)',
-              margin: '0 auto 12px'
+              color: 'var(--white)',
+              margin: '0 auto 12px',
+              boxShadow: '0 4px 12px rgba(37,99,235,0.3)'
             }}
           >
             <Flame size={28} />
           </div>
-          <h2 style={{ fontSize: '1.8rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', margin: '0 0 6px' }}>
+          <h2 style={{ fontSize: '1.8rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', margin: '0 0 6px' }}>
             Create Customer Account
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', margin: 0 }}>
@@ -244,7 +245,7 @@ export default function CustomerRegister() {
 
         <div style={{ textAlign: 'center', marginTop: '20px', fontSize: '0.88rem' }}>
           Already have an account?{' '}
-          <Link to="/customer/login" style={{ color: 'var(--primary-forest)', fontWeight: 700 }}>
+          <Link to="/customer/login" style={{ color: 'var(--royal-blue)', fontWeight: 700 }}>
             Sign In here
           </Link>
         </div>

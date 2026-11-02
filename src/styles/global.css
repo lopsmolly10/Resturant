@@ -1,58 +1,77 @@
 :root {
-  /* Brand Palette */
-  --primary-forest: #183D32;
-  --primary-olive: #496B50;
-  --bg-cream: #F8F5EF;
-  --card-ivory: #FFFDF8;
-  --accent-terracotta: #C66B45;
-  --accent-gold: #C6A15B;
-  --text-charcoal: #292D2B;
-  --border-grey: #E9E7E0;
+  /* =========================================================
+     OFFICIAL DINEPOINT BLUE COLOUR THEME
+     ========================================================= */
+  --primary-blue: #123B66;      /* Primary Navy Blue */
+  --deep-blue: #0B2545;         /* Deep Navy Blue for sidebar, footer, nav */
+  --royal-blue: #2563EB;        /* Royal Blue - primary actions, active indicators */
+  --medium-blue: #3B82F6;       /* Medium Blue - interactive hover, accents */
+  --light-blue: #DBEAFE;        /* Light Blue - selected info panels, badges */
+  --pale-blue: #EFF6FF;         /* Very Light Blue - subtle card fills */
+  --white: #FFFFFF;             /* Pure White - cards, inputs, dropdowns */
+  --page-background: #F5F8FC;   /* Soft Background - page canvas */
+  --text-primary: #172B4D;      /* Dark Text */
+  --text-muted: #64748B;        /* Muted Text */
+  --border-color: #E2E8F0;      /* Border Grey */
+  --success: #16A34A;           /* Success Green */
+  --warning: #D97706;           /* Warning Amber */
+  --danger: #DC2626;            /* Error Red */
 
-  /* Variations & Helpers */
-  --primary-forest-hover: #122d25;
-  --primary-forest-light: #204f41;
-  --primary-olive-light: #e8efe9;
-  --accent-terracotta-hover: #b05a35;
-  --accent-terracotta-light: #faece6;
-  --accent-gold-light: #fbf6ec;
-  --accent-gold-hover: #b38e47;
-  --text-muted: #6c736e;
-  --text-light: #9ba19d;
-  --bg-hover: #f1ede3;
-  --white: #ffffff;
-  --surface-alt: #f3efe7;
+  /* Button & Hover Variants */
+  --royal-blue-hover: #1D4ED8;
+  --primary-blue-hover: #0E2E50;
+  --medium-blue-hover: #1D4ED8;
+  --light-blue-hover: #BFDBFE;
+
+  /* Backward Compatibility Aliases so all components automatically map to the Blue Theme */
+  --primary-forest: var(--primary-blue);
+  --primary-forest-hover: var(--primary-blue-hover);
+  --primary-forest-light: var(--pale-blue);
+  --primary-olive: var(--medium-blue);
+  --primary-olive-light: var(--light-blue);
+  --bg-cream: var(--page-background);
+  --card-ivory: var(--white);
+  --accent-terracotta: var(--royal-blue);
+  --accent-terracotta-hover: var(--royal-blue-hover);
+  --accent-terracotta-light: var(--light-blue);
+  --accent-gold: var(--royal-blue);
+  --accent-gold-light: var(--pale-blue);
+  --accent-gold-hover: var(--royal-blue-hover);
+  --text-charcoal: var(--text-primary);
+  --border-grey: var(--border-color);
+  --surface-alt: var(--page-background);
+  --bg-hover: var(--pale-blue);
 
   /* Status Colors */
-  --status-pending-bg: #fff8e6;
-  --status-pending-text: #b7791f;
-  --status-pending-border: #fbd38d;
+  --status-pending-bg: #FEF3C7;
+  --status-pending-text: #92400E;
+  --status-pending-border: #FDE68A;
 
-  --status-preparing-bg: #ebf8ff;
-  --status-preparing-text: #2b6cb0;
-  --status-preparing-border: #bee3f8;
+  --status-preparing-bg: #EFF6FF;
+  --status-preparing-text: #1D4ED8;
+  --status-preparing-border: #BFDBFE;
 
-  --status-ready-bg: #faf5ff;
-  --status-ready-text: #6b46c1;
-  --status-ready-border: #e9d8fd;
+  --status-ready-bg: #DBEAFE;
+  --status-ready-text: #1E40AF;
+  --status-ready-border: #93C5FD;
 
-  --status-served-bg: #f0fff4;
-  --status-served-text: #22543d;
-  --status-served-border: #c6f6d5;
+  --status-served-bg: #F0FDF4;
+  --status-served-text: #15803D;
+  --status-served-border: #BBF7D0;
 
-  --status-cancelled-bg: #fff5f5;
-  --status-cancelled-text: #9b2c2c;
-  --status-cancelled-border: #fed7d7;
+  --status-cancelled-bg: #FEF2F2;
+  --status-cancelled-text: #B91C1C;
+  --status-cancelled-border: #FECACA;
 
-  --status-lowstock-bg: #fffaf0;
-  --status-lowstock-text: #c05621;
-  --status-lowstock-border: #feebc8;
+  --status-lowstock-bg: #FFFBEB;
+  --status-lowstock-text: #B45309;
+  --status-lowstock-border: #FDE68A;
 
-  /* Shadows & Elevation */
-  --shadow-sm: 0 1px 2px rgba(24, 61, 50, 0.05);
-  --shadow-md: 0 4px 12px rgba(24, 61, 50, 0.08);
-  --shadow-lg: 0 10px 25px rgba(24, 61, 50, 0.12);
-  --shadow-xl: 0 20px 40px rgba(24, 61, 50, 0.16);
+  /* Elevation Shadows */
+  --shadow-sm: 0 1px 3px rgba(11, 37, 69, 0.05);
+  --shadow-md: 0 4px 14px rgba(11, 37, 69, 0.08);
+  --shadow-lg: 0 10px 25px rgba(11, 37, 69, 0.12);
+  --shadow-xl: 0 20px 40px rgba(11, 37, 69, 0.16);
 
   /* Layout */
   --sidebar-width: 260px;
@@ -76,8 +95,8 @@
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-cream);
-  color: var(--text-charcoal);
+  background-color: var(--page-background);
+  color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -88,7 +107,7 @@ h1, h2, h3, h4, .font-serif {
   font-family: 'Playfair Display', Georgia, serif;
   letter-spacing: -0.01em;
   font-weight: 700;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
 }
 
 a {
@@ -108,7 +127,9 @@ input, select, textarea {
   font-size: 0.95rem;
 }
 
-/* Button Classes */
+/* =========================================================
+   BUTTONS (BLUE SYSTEM)
+   ========================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -128,75 +149,91 @@ input, select, textarea {
   cursor: not-allowed;
 }
 
+/* Primary Button: Royal Blue */
 .btn-primary {
-  background-color: var(--primary-forest);
+  background-color: var(--royal-blue);
   color: var(--white);
-  box-shadow: 0 2px 6px rgba(24, 61, 50, 0.2);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
 }
 
 .btn-primary:hover:not(:disabled) {
-  background-color: var(--primary-forest-hover);
+  background-color: var(--royal-blue-hover);
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(24, 61, 50, 0.3);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
 }
 
+/* Secondary Button: Navy Blue */
 .btn-secondary {
-  background-color: var(--accent-terracotta);
+  background-color: var(--primary-blue);
   color: var(--white);
-  box-shadow: 0 2px 6px rgba(198, 107, 69, 0.25);
+  box-shadow: 0 2px 6px rgba(18, 59, 102, 0.25);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: var(--accent-terracotta-hover);
+  background-color: var(--deep-blue);
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(198, 107, 69, 0.35);
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.35);
 }
 
-.btn-gold {
-  background-color: var(--accent-gold);
-  color: var(--primary-forest);
+/* Accent Highlight Button */
+.btn-gold,
+.btn-accent {
+  background-color: var(--royal-blue);
+  color: var(--white);
   font-weight: 700;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
 }
 
-.btn-gold:hover:not(:disabled) {
-  background-color: var(--accent-gold-hover);
+.btn-gold:hover:not(:disabled),
+.btn-accent:hover:not(:disabled) {
+  background-color: var(--royal-blue-hover);
   color: var(--white);
 }
 
+/* Outline Buttons */
 .btn-outline {
-  background-color: transparent;
-  border: 1px solid var(--border-grey);
-  color: var(--text-charcoal);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
 }
 
 .btn-outline:hover:not(:disabled) {
-  background-color: var(--bg-hover);
-  border-color: #d1cfc7;
+  background-color: var(--pale-blue);
+  border-color: var(--light-blue);
+  color: var(--royal-blue);
 }
 
 .btn-outline-primary {
   background-color: transparent;
-  border: 1px solid var(--primary-forest);
-  color: var(--primary-forest);
+  border: 1px solid var(--royal-blue);
+  color: var(--royal-blue);
 }
 
 .btn-outline-primary:hover:not(:disabled) {
-  background-color: var(--primary-olive-light);
+  background-color: var(--pale-blue);
+  border-color: var(--royal-blue);
 }
 
+/* Danger Button */
 .btn-danger {
-  background-color: #e53e3e;
+  background-color: var(--danger);
   color: var(--white);
 }
 
 .btn-danger:hover:not(:disabled) {
-  background-color: #c53030;
+  background-color: #b91c1c;
 }
 
 .btn-sm {
-  padding: 6px 12px;
+  padding: 6px 14px;
   font-size: 0.82rem;
   border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
 }
 
 .btn-icon {
@@ -211,16 +248,17 @@ input, select, textarea {
 
 /* Common Card */
 .card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow var(--transition-normal);
+  transition: all var(--transition-normal);
 }
 
 .card:hover {
   box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
 }
 
 /* Custom Scrollbars */
@@ -230,19 +268,19 @@ input, select, textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-cream);
+  background: var(--page-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c8c5bc;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-olive);
+  background: var(--royal-blue);
 }
 
-/* Toast Container */
+/* Toast Notifications */
 .toast-container {
   position: fixed;
   bottom: 24px;
@@ -259,24 +297,24 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: var(--primary-forest);
+  background-color: var(--deep-blue);
   color: var(--white);
   padding: 14px 20px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   font-size: 0.9rem;
   font-weight: 500;
-  border-left: 4px solid var(--accent-gold);
+  border-left: 4px solid var(--royal-blue);
   animation: slideInUp 0.25s ease-out;
   max-width: 420px;
 }
 
 .toast.toast-error {
-  border-left-color: #e53e3e;
+  border-left-color: var(--danger);
 }
 
 .toast.toast-info {
-  border-left-color: #3182ce;
+  border-left-color: var(--medium-blue);
 }
 
 @keyframes slideInUp {
@@ -289,4 +327,3 @@ input, select, textarea {
     transform: translateY(0);
   }
 }
-

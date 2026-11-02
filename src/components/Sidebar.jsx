@@ -113,9 +113,9 @@ export default function Sidebar({ collapsed, setCollapsed, mobileOpen, setMobile
               to="/"
               className="nav-item"
               style={{
-                backgroundColor: 'rgba(198, 161, 91, 0.15)',
-                color: 'var(--accent-gold)',
-                border: '1px solid rgba(198, 161, 91, 0.3)'
+                backgroundColor: 'rgba(37, 99, 235, 0.18)',
+                color: 'var(--light-blue)',
+                border: '1px solid rgba(37, 99, 235, 0.35)'
               }}
               title="Open Customer Food Ordering Website"
             >

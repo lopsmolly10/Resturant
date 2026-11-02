@@ -25,22 +25,23 @@ export default function CustomerFooter() {
                   width: '38px',
                   height: '38px',
                   borderRadius: '10px',
-                  backgroundColor: 'var(--accent-gold)',
-                  color: 'var(--primary-forest)',
+                  background: 'linear-gradient(135deg, var(--royal-blue), var(--medium-blue))',
+                  color: 'var(--white)',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  boxShadow: '0 2px 8px rgba(37,99,235,0.4)'
                 }}
               >
                 <Flame size={22} />
               </div>
-              <h3 style={{ margin: 0 }}>DinePoint</h3>
+              <h3 style={{ margin: 0, color: 'var(--white)' }}>DinePoint</h3>
             </div>
             <p>
               Experience the pinnacle of culinary excellence in Kampala. From chargrilled Lake Victoria Tilapia
               to gourmet artisanal burgers, our chefs blend local Ugandan produce with contemporary culinary artistry.
             </p>
-            <div style={{ display: 'flex', gap: '12px', marginTop: '18px', color: 'var(--accent-gold)' }}>
+            <div style={{ display: 'flex', gap: '12px', marginTop: '18px', color: 'var(--light-blue)' }}>
               <span>★ 4.9 Rating</span> • <span>Fresh Daily</span> • <span>Dine-in & Delivery</span>
             </div>
           </div>
@@ -69,7 +70,7 @@ export default function CustomerFooter() {
                 <strong>Saturday – Sunday:</strong>
                 <div>08:00 AM – 11:30 PM</div>
               </div>
-              <div style={{ color: 'var(--accent-gold)', marginTop: '4px' }}>
+              <div style={{ color: 'var(--light-blue)', marginTop: '4px' }}>
                 <Clock size={14} style={{ display: 'inline', marginRight: '4px' }} />
                 Kitchen open for online orders now!
               </div>
@@ -81,15 +82,15 @@ export default function CustomerFooter() {
             <h4>Reach Out to Us</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.8)' }}>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
-                <MapPin size={18} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <MapPin size={18} color="var(--light-blue)" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span>Plot 14, Lumumba Avenue, Nakasero, Kampala, Uganda</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                <Phone size={16} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                <Phone size={16} color="var(--light-blue)" style={{ flexShrink: 0 }} />
                 <span>+256 312 900 800 / +256 700 123 456</span>
               </div>
               <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-                <Mail size={16} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
+                <Mail size={16} color="var(--light-blue)" style={{ flexShrink: 0 }} />
                 <span>orders@dinepoint.ug</span>
               </div>
 

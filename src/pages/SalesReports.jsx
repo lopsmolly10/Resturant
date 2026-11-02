@@ -90,7 +90,7 @@ export default function SalesReports() {
       <div className="card" style={{ padding: '16px 24px', marginBottom: '24px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <Calendar size={18} color="var(--primary-forest)" />
+            <Calendar size={18} color="var(--royal-blue)" />
             <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>Report Period:</span>
           </div>
 
@@ -165,28 +165,28 @@ export default function SalesReports() {
             <AreaChart data={activeRevenueData} margin={{ top: 10, right: 20, left: 20, bottom: 0 }}>
               <defs>
                 <linearGradient id="revenueFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#183D32" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#183D32" stopOpacity={0.05}/>
+                  <stop offset="5%" stopColor="#2563EB" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#2563EB" stopOpacity={0.05}/>
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e9e7e0" vertical={false} />
-              <XAxis dataKey={timeRange === 'today' ? 'time' : 'day'} stroke="#6c736e" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" vertical={false} />
+              <XAxis dataKey={timeRange === 'today' ? 'time' : 'day'} stroke="#64748B" />
               <YAxis
-                stroke="#6c736e"
+                stroke="#64748B"
                 tickFormatter={(val) => `${(val / 1000).toLocaleString()}k`}
               />
               <Tooltip
                 formatter={(val) => [formatCurrency(val), 'Revenue']}
                 contentStyle={{
-                  backgroundColor: '#FFFDF8',
-                  border: '1px solid #E9E7E0',
+                  backgroundColor: '#FFFFFF',
+                  border: '1px solid #E2E8F0',
                   borderRadius: '8px'
                 }}
               />
               <Area
                 type="monotone"
                 dataKey="revenue"
-                stroke="#183D32"
+                stroke="#2563EB"
                 strokeWidth={3}
                 fillOpacity={1}
                 fill="url(#revenueFill)"
@@ -207,27 +207,27 @@ export default function SalesReports() {
                 Top 5 ordered dishes by volume
               </p>
             </div>
-            <BarChart3 size={20} color="var(--primary-forest)" />
+            <BarChart3 size={20} color="var(--royal-blue)" />
           </div>
 
           <div style={{ width: '100%', height: '260px' }}>
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={topDishes} margin={{ top: 10, right: 10, left: 0, bottom: 25 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e9e7e0" vertical={false} />
-                <XAxis dataKey="name" stroke="#6c736e" angle={-15} textAnchor="end" fontSize={11} />
-                <YAxis stroke="#6c736e" fontSize={11} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" vertical={false} />
+                <XAxis dataKey="name" stroke="#64748B" angle={-15} textAnchor="end" fontSize={11} />
+                <YAxis stroke="#64748B" fontSize={11} />
                 <Tooltip
                   formatter={(val, name) => [
                     name === 'orders' ? `${val} orders` : formatCurrency(val),
                     name === 'orders' ? 'Total Orders' : 'Revenue'
                   ]}
                   contentStyle={{
-                    backgroundColor: '#FFFDF8',
-                    border: '1px solid #E9E7E0',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E2E8F0',
                     borderRadius: '8px'
                   }}
                 />
-                <Bar dataKey="orders" fill="#C66B45" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="orders" fill="#2563EB" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -242,7 +242,7 @@ export default function SalesReports() {
                 Share of overall menu consumption
               </p>
             </div>
-            <PieIcon size={20} color="var(--primary-forest)" />
+            <PieIcon size={20} color="var(--royal-blue)" />
           </div>
 
           <div style={{ width: '100%', height: '200px' }}>
@@ -313,7 +313,7 @@ export default function SalesReports() {
               {paymentMethodsData.map(pm => (
                 <tr key={pm.name}>
                   <td>
-                    <strong style={{ color: 'var(--primary-forest)' }}>{pm.name}</strong>
+                    <strong style={{ color: 'var(--primary-blue)' }}>{pm.name}</strong>
                   </td>
                   <td>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -323,7 +323,7 @@ export default function SalesReports() {
                       <span style={{ fontWeight: 700 }}>{pm.percentage}%</span>
                     </div>
                   </td>
-                  <td style={{ fontWeight: 800, color: 'var(--primary-forest)' }}>
+                  <td style={{ fontWeight: 800, color: 'var(--royal-blue)' }}>
                     {formatCurrency(pm.amount)}
                   </td>
                   <td>

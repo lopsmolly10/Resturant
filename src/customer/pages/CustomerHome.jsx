@@ -78,7 +78,7 @@ export default function CustomerHome() {
             Freshly prepared with authentic Ugandan ingredients and culinary excellence.
           </p>
           <div className="hero-cta-buttons">
-            <Link to="/customer/menu" className="btn btn-gold btn-lg" style={{ padding: '14px 32px', fontSize: '1.05rem' }}>
+            <Link to="/customer/menu" className="btn btn-primary btn-lg" style={{ padding: '14px 32px', fontSize: '1.05rem' }}>
               <UtensilsCrossed size={18} /> Explore Menu
             </Link>
             <Link to="/customer/menu" className="btn btn-secondary btn-lg" style={{ padding: '14px 32px', fontSize: '1.05rem' }}>
@@ -192,7 +192,7 @@ export default function CustomerHome() {
               Order our signature Lake Victoria Tilapia Fillet this week and receive two complimentary
               chilled Passion Mint Coolers on the house. Valid for Dine-In and Delivery orders!
             </p>
-            <Link to="/customer/menu" className="btn btn-gold">
+            <Link to="/customer/menu" className="btn btn-primary" style={{ border: '2px solid rgba(255,255,255,0.4)' }}>
               Claim Offer Now <ArrowRight size={16} />
             </Link>
           </div>
@@ -207,10 +207,10 @@ export default function CustomerHome() {
       <section className="customer-section" id="about">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
           <div>
-            <span style={{ color: 'var(--accent-terracotta)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1.2px' }}>
+            <span style={{ color: 'var(--royal-blue)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1.2px' }}>
               About DinePoint
             </span>
-            <h2 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', margin: '10px 0 16px' }}>
+            <h2 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', margin: '10px 0 16px' }}>
               Exquisite Hospitality in the Heart of Kampala
             </h2>
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '16px' }}>
@@ -224,15 +224,15 @@ export default function CustomerHome() {
             </p>
             <div style={{ display: 'flex', gap: '20px' }}>
               <div>
-                <strong style={{ fontSize: '1.8rem', color: 'var(--primary-forest)', display: 'block' }}>10k+</strong>
+                <strong style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', display: 'block' }}>10k+</strong>
                 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Satisfied Diners</span>
               </div>
               <div>
-                <strong style={{ fontSize: '1.8rem', color: 'var(--primary-forest)', display: 'block' }}>15+</strong>
+                <strong style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', display: 'block' }}>15+</strong>
                 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Years Experience</span>
               </div>
               <div>
-                <strong style={{ fontSize: '1.8rem', color: 'var(--primary-forest)', display: 'block' }}>100%</strong>
+                <strong style={{ fontSize: '1.8rem', color: 'var(--primary-blue)', display: 'block' }}>100%</strong>
                 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Farm Fresh Food</span>
               </div>
             </div>
@@ -249,14 +249,14 @@ export default function CustomerHome() {
                 position: 'absolute',
                 bottom: '-20px',
                 left: '-20px',
-                backgroundColor: 'var(--primary-forest)',
+                backgroundColor: 'var(--deep-blue)',
                 color: 'var(--white)',
                 padding: '18px 24px',
                 borderRadius: 'var(--radius-md)',
                 boxShadow: 'var(--shadow-md)'
               }}
             >
-              <div style={{ color: 'var(--accent-gold)', fontWeight: 800, fontSize: '1.1rem' }}>★ Nakasero Kampala</div>
+              <div style={{ color: 'var(--light-blue)', fontWeight: 800, fontSize: '1.1rem' }}>★ Nakasero Kampala</div>
               <div style={{ fontSize: '0.82rem', opacity: 0.9 }}>Open 7 Days a Week</div>
             </div>
           </div>

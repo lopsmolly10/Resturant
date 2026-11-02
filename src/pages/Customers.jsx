@@ -115,7 +115,7 @@ export default function Customers() {
       label: 'Customer Name',
       render: (r) => (
         <div>
-          <div style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>{r.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>{r.name}</div>
           <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
             <Mail size={12} style={{ display: 'inline', marginRight: '3px' }} />
             {r.email || 'No email provided'}
@@ -137,9 +137,9 @@ export default function Customers() {
       key: 'tier',
       label: 'VIP Tier',
       render: (r) => {
-        let badgeStyle = { backgroundColor: '#e2e8f0', color: '#4a5568' };
-        if (r.tier === 'Platinum') badgeStyle = { backgroundColor: '#e9d8fd', color: '#6b46c1' };
-        if (r.tier === 'Gold') badgeStyle = { backgroundColor: '#fefcbf', color: '#b7791f' };
+        let badgeStyle = { backgroundColor: '#F1F5F9', color: '#475569', border: '1px solid #E2E8F0' };
+        if (r.tier === 'Platinum') badgeStyle = { backgroundColor: 'var(--light-blue)', color: 'var(--deep-blue)', border: '1px solid #BFDBFE' };
+        if (r.tier === 'Gold') badgeStyle = { backgroundColor: 'var(--pale-blue)', color: 'var(--royal-blue)', border: '1px solid #DBEAFE' };
 
         return (
           <span
@@ -169,7 +169,7 @@ export default function Customers() {
       key: 'spent',
       label: 'Total Spend (UGX)',
       render: (r) => (
-        <span style={{ fontWeight: 800, color: 'var(--primary-forest)' }}>
+        <span style={{ fontWeight: 800, color: 'var(--royal-blue)' }}>
           {formatCurrency(r.totalSpent)}
         </span>
       )
@@ -178,8 +178,8 @@ export default function Customers() {
       key: 'favorite',
       label: 'Preferred Dish',
       render: (r) => (
-        <span style={{ fontSize: '0.82rem', color: 'var(--accent-terracotta)' }}>
-          <Heart size={12} style={{ display: 'inline', marginRight: '3px' }} />
+        <span style={{ fontSize: '0.82rem', color: 'var(--primary-blue)', fontWeight: 600 }}>
+          <Heart size={12} style={{ display: 'inline', marginRight: '3px', color: 'var(--royal-blue)' }} />
           {r.favoriteDish || '—'}
         </span>
       )

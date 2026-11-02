@@ -163,19 +163,19 @@ export default function Dashboard() {
               <AreaChart data={activeChartData} margin={{ top: 10, right: 20, left: 20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#183D32" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#183D32" stopOpacity={0.05}/>
+                    <stop offset="5%" stopColor="#2563EB" stopOpacity={0.8}/>
+                    <stop offset="95%" stopColor="#2563EB" stopOpacity={0.05}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e9e7e0" vertical={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#E2E8F0" vertical={false} />
                 <XAxis
                   dataKey={chartView === 'hourly' ? 'time' : 'day'}
-                  stroke="#6c736e"
+                  stroke="#64748B"
                   fontSize={12}
                   tickLine={false}
                 />
                 <YAxis
-                  stroke="#6c736e"
+                  stroke="#64748B"
                   fontSize={11}
                   tickLine={false}
                   axisLine={false}
@@ -184,17 +184,17 @@ export default function Dashboard() {
                 <Tooltip
                   formatter={(val) => [formatCurrency(val), 'Revenue']}
                   contentStyle={{
-                    backgroundColor: '#FFFDF8',
-                    border: '1px solid #E9E7E0',
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E2E8F0',
                     borderRadius: '8px',
-                    boxShadow: '0 4px 12px rgba(24, 61, 50, 0.1)',
+                    boxShadow: '0 4px 12px rgba(11, 37, 69, 0.1)',
                     fontFamily: 'inherit'
                   }}
                 />
                 <Area
                   type="monotone"
                   dataKey="revenue"
-                  stroke="#183D32"
+                  stroke="#2563EB"
                   strokeWidth={2.5}
                   fillOpacity={1}
                   fill="url(#colorRevenue)"
@@ -324,7 +324,7 @@ export default function Dashboard() {
             <tbody>
               {recentOrders.map(order => (
                 <tr key={order.id}>
-                  <td style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>
+                  <td style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>
                     {order.id}
                   </td>
                   <td>
@@ -334,7 +334,7 @@ export default function Dashboard() {
                   <td>
                     {order.items.map(i => `${i.name} (x${i.quantity})`).join(', ')}
                   </td>
-                  <td style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>
+                  <td style={{ fontWeight: 700, color: 'var(--royal-blue)' }}>
                     {formatCurrency(order.totalAmount)}
                   </td>
                   <td>{formatDate(order.orderTime, true)}</td>
@@ -440,7 +440,7 @@ export default function Dashboard() {
                     <div>
                       <strong>{item.quantity}x {item.name}</strong>
                       {item.notes && (
-                        <div style={{ fontSize: '0.78rem', color: 'var(--accent-terracotta)' }}>
+                        <div style={{ fontSize: '0.78rem', color: 'var(--royal-blue)', fontWeight: 600 }}>
                           Note: {item.notes}
                         </div>
                       )}
@@ -453,7 +453,7 @@ export default function Dashboard() {
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '8px', borderTop: '1px solid var(--border-grey)' }}>
               <span style={{ fontSize: '1rem', fontWeight: 700 }}>Total Amount:</span>
-              <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+              <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--royal-blue)' }}>
                 {formatCurrency(selectedOrder.totalAmount)}
               </span>
             </div>

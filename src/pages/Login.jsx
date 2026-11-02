@@ -7,8 +7,7 @@ import {
   Eye,
   EyeOff,
   ShieldCheck,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { initialUsers } from '../data/mockData';
@@ -31,7 +30,7 @@ export default function Login() {
 
     const res = login(username, password, rememberMe);
     if (res.success) {
-      navigate('/');
+      navigate('/admin');
     } else {
       setErrorMsg('Invalid login credentials');
     }
@@ -41,7 +40,7 @@ export default function Login() {
     setUsername(user.username);
     setPassword('demoPass123');
     login(user.username, 'demoPass123', true);
-    navigate('/');
+    navigate('/admin');
   };
 
   return (
@@ -51,7 +50,7 @@ export default function Login() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'var(--bg-cream)',
+        backgroundColor: 'var(--page-background)',
         padding: '24px',
         position: 'relative'
       }}
@@ -64,7 +63,8 @@ export default function Login() {
           padding: '40px 36px',
           boxShadow: 'var(--shadow-xl)',
           borderRadius: 'var(--radius-lg)',
-          border: '1px solid var(--border-grey)'
+          border: '1px solid var(--border-color)',
+          backgroundColor: 'var(--white)'
         }}
       >
         {/* Brand Header */}
@@ -75,18 +75,18 @@ export default function Login() {
               height: '56px',
               margin: '0 auto 14px',
               borderRadius: '16px',
-              background: 'linear-gradient(135deg, var(--accent-gold), #997837)',
+              background: 'linear-gradient(135deg, var(--royal-blue), var(--medium-blue))',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'var(--primary-forest)',
-              boxShadow: '0 4px 12px rgba(198, 161, 91, 0.35)'
+              color: 'var(--white)',
+              boxShadow: '0 4px 14px rgba(37, 99, 235, 0.35)'
             }}
           >
             <Flame size={32} />
           </div>
-          <h1 style={{ fontSize: '1.85rem', margin: '0 0 6px', color: 'var(--primary-forest)', fontFamily: 'Playfair Display, serif' }}>
-            Dine<span style={{ color: 'var(--accent-gold)' }}>Point</span>
+          <h1 style={{ fontSize: '1.85rem', margin: '0 0 6px', color: 'var(--primary-blue)', fontFamily: 'Playfair Display, serif' }}>
+            Dine<span style={{ color: 'var(--royal-blue)' }}>Point</span>
           </h1>
           <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)' }}>
             Restaurant Management & Information System
@@ -177,7 +177,7 @@ export default function Login() {
             <a
               href="#forgot"
               onClick={(e) => { e.preventDefault(); alert('Demo: Use any staff role below for immediate login.'); }}
-              style={{ fontSize: '0.82rem', color: 'var(--primary-olive)', fontWeight: 600 }}
+              style={{ fontSize: '0.82rem', color: 'var(--royal-blue)', fontWeight: 600 }}
             >
               Need help?
             </a>
@@ -193,7 +193,7 @@ export default function Login() {
         </form>
 
         {/* Quick Demo Staff Logins */}
-        <div style={{ marginTop: '30px', borderTop: '1px solid var(--border-grey)', paddingTop: '20px' }}>
+        <div style={{ marginTop: '30px', borderTop: '1px solid var(--border-color)', paddingTop: '20px' }}>
           <div style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '12px', textAlign: 'center' }}>
             Quick Demo Logins by Role
           </div>
@@ -206,7 +206,7 @@ export default function Login() {
                 style={{ justifyContent: 'flex-start', fontSize: '0.78rem', padding: '8px' }}
                 onClick={() => handleQuickLoginAs(u)}
               >
-                <ShieldCheck size={14} color="var(--primary-olive)" />
+                <ShieldCheck size={14} color="var(--royal-blue)" />
                 <span style={{ fontWeight: 600 }}>{u.role}</span>
               </button>
             ))}
@@ -216,4 +216,3 @@ export default function Login() {
     </div>
   );
 }
-

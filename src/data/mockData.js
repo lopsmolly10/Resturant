@@ -832,17 +832,17 @@ export const revenueDataWeekly = [
 ];
 
 export const salesByCategoryData = [
-  { name: 'Main Course', value: 45, color: '#183D32' },
-  { name: 'Fast Food', value: 22, color: '#C66B45' },
-  { name: 'Drinks', value: 16, color: '#C6A15B' },
-  { name: 'Breakfast', value: 10, color: '#496B50' },
-  { name: 'Desserts & Snacks', value: 7, color: '#292D2B' }
+  { name: 'Main Course', value: 45, color: '#0B2545' },
+  { name: 'Fast Food', value: 22, color: '#123B66' },
+  { name: 'Drinks', value: 16, color: '#2563EB' },
+  { name: 'Breakfast', value: 10, color: '#3B82F6' },
+  { name: 'Desserts & Snacks', value: 7, color: '#93C5FD' }
 ];
 
 export const paymentMethodsData = [
-  { name: 'Mobile Money (MTN/Airtel)', percentage: 56, amount: 21450000, color: '#C6A15B' },
-  { name: 'Card (Visa/Mastercard)', percentage: 28, amount: 10725000, color: '#183D32' },
-  { name: 'Cash (UGX)', percentage: 16, amount: 6130000, color: '#C66B45' }
+  { name: 'Mobile Money (MTN/Airtel)', percentage: 56, amount: 21450000, color: '#2563EB' },
+  { name: 'Card (Visa/Mastercard)', percentage: 28, amount: 10725000, color: '#123B66' },
+  { name: 'Cash (UGX)', percentage: 16, amount: 6130000, color: '#3B82F6' }
 ];
 
 export const restaurantDetails = {

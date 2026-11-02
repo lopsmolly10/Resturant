@@ -99,7 +99,7 @@ export default function Payment() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            color: 'var(--primary-forest)',
+            color: 'var(--primary-blue)',
             fontWeight: 600,
             fontSize: '0.92rem',
             marginBottom: '24px',
@@ -109,7 +109,7 @@ export default function Payment() {
           <ArrowLeft size={18} /> Back to Checkout Details
         </Link>
 
-        <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', marginBottom: '8px' }}>
+        <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', marginBottom: '8px' }}>
           Select Payment Method
         </h1>
         <p style={{ color: 'var(--text-muted)', marginBottom: '32px' }}>
@@ -123,8 +123,8 @@ export default function Payment() {
               {/* Option 1: Mobile Money */}
               <label
                 style={{
-                  border: `2px solid ${paymentMethod === 'Mobile Money' ? 'var(--primary-forest)' : 'var(--border-grey)'}`,
-                  backgroundColor: paymentMethod === 'Mobile Money' ? 'var(--primary-olive-light)' : 'var(--white)',
+                  border: `2px solid ${paymentMethod === 'Mobile Money' ? 'var(--royal-blue)' : 'var(--border-grey)'}`,
+                  backgroundColor: paymentMethod === 'Mobile Money' ? 'var(--pale-blue)' : 'var(--white)',
                   borderRadius: 'var(--radius-lg)',
                   padding: '18px 20px',
                   display: 'flex',
@@ -140,13 +140,13 @@ export default function Payment() {
                   value="Mobile Money"
                   checked={paymentMethod === 'Mobile Money'}
                   onChange={e => setPaymentMethod(e.target.value)}
-                  style={{ accentColor: 'var(--primary-forest)', width: '18px', height: '18px' }}
+                  style={{ accentColor: 'var(--royal-blue)', width: '18px', height: '18px' }}
                 />
-                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#fefcbf', color: '#b7791f', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'var(--light-blue)', color: 'var(--primary-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Smartphone size={24} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--primary-forest)' }}>
+                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--deep-blue)' }}>
                     Mobile Money (MTN MoMo / Airtel Money)
                   </div>
                   <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
@@ -158,8 +158,8 @@ export default function Payment() {
               {/* Option 2: Card */}
               <label
                 style={{
-                  border: `2px solid ${paymentMethod === 'Card' ? 'var(--primary-forest)' : 'var(--border-grey)'}`,
-                  backgroundColor: paymentMethod === 'Card' ? 'var(--primary-olive-light)' : 'var(--white)',
+                  border: `2px solid ${paymentMethod === 'Card' ? 'var(--royal-blue)' : 'var(--border-grey)'}`,
+                  backgroundColor: paymentMethod === 'Card' ? 'var(--pale-blue)' : 'var(--white)',
                   borderRadius: 'var(--radius-lg)',
                   padding: '18px 20px',
                   display: 'flex',
@@ -175,13 +175,13 @@ export default function Payment() {
                   value="Card"
                   checked={paymentMethod === 'Card'}
                   onChange={e => setPaymentMethod(e.target.value)}
-                  style={{ accentColor: 'var(--primary-forest)', width: '18px', height: '18px' }}
+                  style={{ accentColor: 'var(--royal-blue)', width: '18px', height: '18px' }}
                 />
-                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#ebf8ff', color: '#2b6cb0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'var(--light-blue)', color: 'var(--royal-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <CreditCard size={24} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--primary-forest)' }}>
+                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--deep-blue)' }}>
                     Credit / Debit Card (Visa / Mastercard)
                   </div>
                   <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
@@ -193,8 +193,8 @@ export default function Payment() {
               {/* Option 3: Cash */}
               <label
                 style={{
-                  border: `2px solid ${paymentMethod === 'Cash' ? 'var(--primary-forest)' : 'var(--border-grey)'}`,
-                  backgroundColor: paymentMethod === 'Cash' ? 'var(--primary-olive-light)' : 'var(--white)',
+                  border: `2px solid ${paymentMethod === 'Cash' ? 'var(--royal-blue)' : 'var(--border-grey)'}`,
+                  backgroundColor: paymentMethod === 'Cash' ? 'var(--pale-blue)' : 'var(--white)',
                   borderRadius: 'var(--radius-lg)',
                   padding: '18px 20px',
                   display: 'flex',
@@ -210,13 +210,13 @@ export default function Payment() {
                   value="Cash"
                   checked={paymentMethod === 'Cash'}
                   onChange={e => setPaymentMethod(e.target.value)}
-                  style={{ accentColor: 'var(--primary-forest)', width: '18px', height: '18px' }}
+                  style={{ accentColor: 'var(--royal-blue)', width: '18px', height: '18px' }}
                 />
-                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#f0fff4', color: '#22543d', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'var(--light-blue)', color: 'var(--deep-blue)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Banknote size={24} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--primary-forest)' }}>
+                  <div style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--deep-blue)' }}>
                     Cash on Delivery / Dining Counter
                   </div>
                   <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
@@ -229,7 +229,7 @@ export default function Payment() {
             {/* Dynamic Inputs according to selected method */}
             {paymentMethod === 'Mobile Money' && (
               <div style={{ backgroundColor: 'var(--surface-alt)', padding: '20px', borderRadius: 'var(--radius-md)', marginBottom: '24px' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-forest)', marginBottom: '14px' }}>
+                <h4 style={{ fontSize: '0.95rem', color: 'var(--deep-blue)', marginBottom: '14px' }}>
                   Mobile Money Provider:
                 </h4>
                 <div style={{ display: 'flex', gap: '16px', marginBottom: '16px' }}>
@@ -274,7 +274,7 @@ export default function Payment() {
 
             {paymentMethod === 'Card' && (
               <div style={{ backgroundColor: 'var(--surface-alt)', padding: '20px', borderRadius: 'var(--radius-md)', marginBottom: '24px' }}>
-                <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-forest)', marginBottom: '14px' }}>
+                <h4 style={{ fontSize: '0.95rem', color: 'var(--deep-blue)', marginBottom: '14px' }}>
                   Card Details (Simulation):
                 </h4>
                 <div className="form-group">

@@ -139,7 +139,7 @@ export default function OrderManagement() {
       label: 'Order ID',
       width: '120px',
       render: (row) => (
-        <span style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>
+        <span style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>
           {row.id}
         </span>
       )
@@ -169,7 +169,7 @@ export default function OrderManagement() {
       key: 'amount',
       label: 'Total (UGX)',
       render: (row) => (
-        <span style={{ fontWeight: 800, color: 'var(--primary-forest)' }}>
+        <span style={{ fontWeight: 800, color: 'var(--royal-blue)' }}>
           {formatCurrency(row.totalAmount)}
         </span>
       )
@@ -295,7 +295,7 @@ export default function OrderManagement() {
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
             <div>
               <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Estimated Total: </span>
-              <strong style={{ fontSize: '1.2rem', color: 'var(--primary-forest)' }}>
+              <strong style={{ fontSize: '1.2rem', color: 'var(--royal-blue)' }}>
                 {formatCurrency(computedTotal)}
               </strong>
             </div>
@@ -566,7 +566,7 @@ export default function OrderManagement() {
 
             {/* Items list */}
             <div>
-              <h5 style={{ fontSize: '0.9rem', marginBottom: '8px', color: 'var(--primary-forest)' }}>Items Summary:</h5>
+              <h5 style={{ fontSize: '0.9rem', marginBottom: '8px', color: 'var(--deep-blue)' }}>Items Summary:</h5>
               <div style={{ background: 'var(--surface-alt)', borderRadius: '8px', padding: '12px' }}>
                 {viewingOrder.items.map((it, idx) => (
                   <div
@@ -581,7 +581,7 @@ export default function OrderManagement() {
                     <div>
                       <strong>{it.quantity}x {it.name}</strong>
                       {it.notes && (
-                        <div style={{ fontSize: '0.76rem', color: 'var(--accent-terracotta)' }}>
+                        <div style={{ fontSize: '0.76rem', color: 'var(--royal-blue)', fontWeight: 600 }}>
                           Note: {it.notes}
                         </div>
                       )}
@@ -593,14 +593,14 @@ export default function OrderManagement() {
             </div>
 
             {viewingOrder.specialNotes && (
-              <div style={{ background: '#fffaf0', border: '1px solid #feebc8', padding: '10px 14px', borderRadius: '8px', fontSize: '0.84rem' }}>
+              <div style={{ background: 'var(--pale-blue)', border: '1px solid var(--light-blue)', padding: '10px 14px', borderRadius: '8px', fontSize: '0.84rem', color: 'var(--deep-blue)' }}>
                 <strong>Special Request:</strong> {viewingOrder.specialNotes}
               </div>
             )}
 
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '10px', borderTop: '1px solid var(--border-grey)' }}>
               <span style={{ fontSize: '1rem', fontWeight: 700 }}>Total Order Value:</span>
-              <span style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+              <span style={{ fontSize: '1.35rem', fontWeight: 800, color: 'var(--royal-blue)' }}>
                 {formatCurrency(viewingOrder.totalAmount)}
               </span>
             </div>

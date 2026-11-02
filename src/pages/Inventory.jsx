@@ -121,7 +121,7 @@ export default function Inventory() {
       label: 'Ingredient / Item',
       render: (r) => (
         <div>
-          <div style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>{r.name}</div>
+          <div style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>{r.name}</div>
           <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
             Category: {r.category}
           </div>

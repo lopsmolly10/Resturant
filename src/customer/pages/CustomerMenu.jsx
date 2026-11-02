@@ -93,9 +93,9 @@ export default function CustomerMenu() {
         {filteredItems.length === 0 ? (
           <div className="card" style={{ padding: '60px 24px', textAlign: 'center' }}>
             <div className="empty-state-icon" style={{ margin: '0 auto 16px' }}>
-              <Sparkles size={36} color="var(--accent-gold)" />
+              <Sparkles size={36} color="var(--royal-blue)" />
             </div>
-            <h3 style={{ fontSize: '1.3rem', color: 'var(--primary-forest)' }}>No delicious meals found</h3>
+            <h3 style={{ fontSize: '1.3rem', color: 'var(--deep-blue)' }}>No delicious meals found</h3>
             <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
               We couldn't find any dishes matching "{searchTerm}". Try clearing your search or picking another category.
             </p>

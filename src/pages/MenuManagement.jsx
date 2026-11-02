@@ -250,7 +250,7 @@ export default function MenuManagement() {
                       onClick={() => toggleItemAvailability(item.id)}
                       title={item.available ? 'Mark as Out of Stock' : 'Mark as Available'}
                       style={{
-                        color: item.available ? 'var(--primary-forest)' : '#c53030'
+                        color: item.available ? 'var(--success)' : 'var(--danger)'
                       }}
                     >
                       {item.available ? <Check size={16} /> : <X size={16} />}

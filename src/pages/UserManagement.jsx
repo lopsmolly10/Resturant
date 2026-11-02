@@ -86,7 +86,7 @@ export default function UserManagement() {
             style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }}
           />
           <div>
-            <strong style={{ color: 'var(--primary-forest)', display: 'block' }}>{r.name}</strong>
+            <strong style={{ color: 'var(--primary-blue)', display: 'block' }}>{r.name}</strong>
             <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
               @{r.username}
             </span>
@@ -98,10 +98,21 @@ export default function UserManagement() {
       key: 'role',
       label: 'System Role',
       render: (r) => {
-        let badgeColor = 'var(--primary-forest)';
-        if (r.role === 'Chef') badgeColor = 'var(--accent-terracotta)';
-        if (r.role === 'Manager') badgeColor = 'var(--accent-gold)';
-        if (r.role === 'Cashier') badgeColor = '#2b6cb0';
+        let badgeColor = 'var(--primary-blue)';
+        let badgeBg = 'var(--pale-blue)';
+        if (r.role === 'Administrator') {
+          badgeColor = 'var(--deep-blue)';
+          badgeBg = 'var(--light-blue)';
+        } else if (r.role === 'Manager') {
+          badgeColor = 'var(--primary-blue)';
+          badgeBg = 'var(--pale-blue)';
+        } else if (r.role === 'Chef') {
+          badgeColor = 'var(--royal-blue)';
+          badgeBg = '#E0EDFE';
+        } else if (r.role === 'Cashier') {
+          badgeColor = 'var(--medium-blue)';
+          badgeBg = 'var(--pale-blue)';
+        }
 
         return (
           <span
@@ -110,7 +121,7 @@ export default function UserManagement() {
               borderRadius: 'var(--radius-full)',
               fontSize: '0.78rem',
               fontWeight: 700,
-              backgroundColor: 'var(--surface-alt)',
+              backgroundColor: badgeBg,
               color: badgeColor,
               border: `1px solid var(--border-grey)`
             }}

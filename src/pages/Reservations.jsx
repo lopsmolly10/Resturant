@@ -98,13 +98,13 @@ export default function Reservations() {
   const getTableStatusColor = (status) => {
     switch (status) {
       case 'Available':
-        return '#38a169'; // Green
+        return '#16A34A'; // Success Green
       case 'Occupied':
-        return '#dd6b20'; // Terracotta / Orange
+        return '#0B2545'; // Deep Navy Blue
       case 'Reserved':
-        return '#805ad5'; // Purple
+        return '#2563EB'; // Royal Blue
       default:
-        return '#718096';
+        return '#64748B'; // Muted Slate
     }
   };
 
@@ -114,7 +114,7 @@ export default function Reservations() {
       label: 'ID',
       width: '100px',
       render: (r) => (
-        <span style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>
+        <span style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>
           {r.id}
         </span>
       )
@@ -150,7 +150,7 @@ export default function Reservations() {
       label: 'Assigned Table',
       render: (r) => (
         <div>
-          <span style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>
+          <span style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>
             {r.tableNumber}
           </span>
           <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
@@ -250,15 +250,15 @@ export default function Reservations() {
           {/* Legend */}
           <div style={{ display: 'flex', gap: '16px', fontSize: '0.82rem', alignItems: 'center' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#38a169' }}></span>
+              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#16A34A' }}></span>
               Available ({tables.filter(t => t.status === 'Available').length})
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#dd6b20' }}></span>
+              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#0B2545' }}></span>
               Occupied ({tables.filter(t => t.status === 'Occupied').length})
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#805ad5' }}></span>
+              <span style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#2563EB' }}></span>
               Reserved ({tables.filter(t => t.status === 'Reserved').length})
             </span>
           </div>
@@ -295,7 +295,7 @@ export default function Reservations() {
                 title={isAvail ? `Click to reserve ${table.name}` : `${table.name} is ${table.status}`}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--primary-forest)' }}>
+                  <span style={{ fontWeight: 800, fontSize: '0.95rem', color: 'var(--primary-blue)' }}>
                     {table.name}
                   </span>
                   <span
@@ -320,7 +320,7 @@ export default function Reservations() {
                 </div>
 
                 {isAvail && (
-                  <div style={{ marginTop: '8px', fontSize: '0.74rem', color: 'var(--primary-forest)', fontWeight: 600 }}>
+                  <div style={{ marginTop: '8px', fontSize: '0.74rem', color: 'var(--royal-blue)', fontWeight: 600 }}>
                     + Book Table
                   </div>
                 )}

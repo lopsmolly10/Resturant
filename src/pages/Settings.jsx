@@ -56,7 +56,7 @@ export default function Settings() {
         {/* Business Profile */}
         <div className="card">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid var(--border-grey)', paddingBottom: '12px' }}>
-            <Store size={22} color="var(--primary-forest)" />
+            <Store size={22} color="var(--royal-blue)" />
             <h3 style={{ margin: 0, fontSize: '1.25rem' }}>Restaurant Business Profile</h3>
           </div>
 
@@ -116,7 +116,7 @@ export default function Settings() {
         {/* Financial & Taxation Configuration */}
         <div className="card">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid var(--border-grey)', paddingBottom: '12px' }}>
-            <Receipt size={22} color="var(--accent-gold)" />
+            <Receipt size={22} color="var(--primary-blue)" />
             <h3 style={{ margin: 0, fontSize: '1.25rem' }}>Taxation & Currency Settings</h3>
           </div>
 
@@ -145,7 +145,7 @@ export default function Settings() {
         {/* Operating Hours */}
         <div className="card">
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '18px', borderBottom: '1px solid var(--border-grey)', paddingBottom: '12px' }}>
-            <Clock size={22} color="var(--accent-terracotta)" />
+            <Clock size={22} color="var(--medium-blue)" />
             <h3 style={{ margin: 0, fontSize: '1.25rem' }}>Kitchen & Dining Service Hours</h3>
           </div>
 

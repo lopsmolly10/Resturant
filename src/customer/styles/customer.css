@@ -1,13 +1,13 @@
 /* =========================================================
-   DINEPOINT CUSTOMER ORDERING INTERFACE STYLES
+   DINEPOINT CUSTOMER ORDERING INTERFACE STYLES (BLUE THEME)
    ========================================================= */
 
 .customer-site {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-cream);
-  color: var(--text-charcoal);
+  background-color: var(--page-background);
+  color: var(--text-primary);
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -16,16 +16,15 @@
 }
 
 /* =========================================================
-   CUSTOMER NAVBAR
+   CUSTOMER NAVBAR (DEEP NAVY BLUE: #0B2545)
    ========================================================= */
 .customer-navbar {
   position: sticky;
   top: 0;
   z-index: 999;
-  background-color: rgba(255, 253, 248, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border-grey);
-  box-shadow: 0 2px 10px rgba(24, 61, 50, 0.05);
+  background-color: var(--deep-blue);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 14px rgba(11, 37, 69, 0.15);
 }
 
 .customer-nav-container {
@@ -49,31 +48,31 @@
   width: 42px;
   height: 42px;
   border-radius: 12px;
-  background: linear-gradient(135deg, var(--accent-gold), #997837);
+  background: linear-gradient(135deg, var(--royal-blue), var(--medium-blue));
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-forest);
-  box-shadow: 0 3px 8px rgba(198, 161, 91, 0.35);
+  color: var(--white);
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.35);
 }
 
 .customer-brand-text h1 {
   font-size: 1.35rem;
   font-family: 'Playfair Display', serif;
   margin: 0;
-  color: var(--primary-forest);
+  color: var(--white);
   line-height: 1.1;
 }
 
 .customer-brand-text h1 span {
-  color: var(--accent-gold);
+  color: var(--light-blue);
 }
 
 .customer-brand-text p {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1.2px;
-  color: var(--primary-olive);
+  color: rgba(219, 234, 254, 0.75);
   margin: 0;
 }
 
@@ -86,16 +85,19 @@
 .customer-nav-link {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-charcoal);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
   position: relative;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 
-.customer-nav-link:hover,
+.customer-nav-link:hover {
+  color: var(--light-blue);
+}
+
 .customer-nav-link.active {
-  color: var(--primary-forest);
+  color: var(--white);
 }
 
 .customer-nav-link.active::after {
@@ -105,8 +107,9 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: var(--accent-gold);
+  background-color: var(--royal-blue);
   border-radius: 2px;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.8);
 }
 
 .customer-nav-actions {
@@ -120,20 +123,21 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--surface-alt);
-  border: 1px solid var(--border-grey);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-forest);
+  color: var(--white);
   transition: all var(--transition-fast);
   text-decoration: none;
 }
 
 .cart-btn-trigger:hover {
-  background-color: var(--primary-forest);
+  background-color: var(--royal-blue);
   color: var(--white);
-  border-color: var(--primary-forest);
+  border-color: var(--royal-blue);
+  transform: translateY(-1px);
 }
 
 .cart-badge-pill {
@@ -143,14 +147,14 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: var(--accent-terracotta);
+  background-color: var(--royal-blue);
   color: var(--white);
   font-size: 0.72rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--card-ivory);
+  border: 2px solid var(--deep-blue);
 }
 
 .staff-portal-btn {
@@ -159,25 +163,27 @@
   gap: 6px;
   font-size: 0.82rem;
   font-weight: 600;
-  padding: 6px 12px;
-  background-color: var(--primary-forest);
+  padding: 7px 14px;
+  background-color: var(--royal-blue);
   color: var(--white);
   border-radius: var(--radius-full);
   text-decoration: none;
   transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
 }
 
 .staff-portal-btn:hover {
-  background-color: var(--primary-forest-hover);
+  background-color: var(--royal-blue-hover);
   transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.4);
 }
 
 /* =========================================================
-   HERO SECTION
+   HERO SECTION (BLUE ATMOSPHERE)
    ========================================================= */
 .customer-hero {
   position: relative;
-  background: linear-gradient(rgba(24, 61, 50, 0.88), rgba(24, 61, 50, 0.94)),
+  background: linear-gradient(rgba(11, 37, 69, 0.9), rgba(18, 59, 102, 0.94)),
               url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
   color: var(--white);
   padding: 100px 24px 120px;
@@ -194,9 +200,9 @@
   align-items: center;
   gap: 8px;
   padding: 6px 18px;
-  background: rgba(198, 161, 91, 0.2);
-  border: 1px solid rgba(198, 161, 91, 0.4);
-  color: var(--accent-gold);
+  background: rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(219, 234, 254, 0.35);
+  color: var(--light-blue);
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 700;
@@ -214,13 +220,13 @@
 }
 
 .customer-hero h1 span {
-  color: var(--accent-gold);
+  color: var(--light-blue);
   font-style: italic;
 }
 
 .customer-hero p {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 36px;
   line-height: 1.6;
 }
@@ -236,10 +242,10 @@
 .hero-stats-bar {
   max-width: 960px;
   margin: -50px auto 60px;
-  background-color: var(--card-ivory);
+  background-color: var(--white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
-  border: 1px solid var(--border-grey);
+  border: 1px solid var(--border-color);
   padding: 24px 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -258,8 +264,8 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background-color: var(--primary-olive-light);
-  color: var(--primary-forest);
+  background-color: var(--pale-blue);
+  color: var(--royal-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +275,7 @@
 .hero-stat-text h4 {
   font-size: 1.25rem;
   margin: 0;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
 }
 
 .hero-stat-text p {
@@ -294,7 +300,7 @@
 }
 
 .section-head span.tagline {
-  color: var(--accent-terracotta);
+  color: var(--royal-blue);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -306,7 +312,7 @@
 .section-head h2 {
   font-size: 2.3rem;
   font-family: 'Playfair Display', serif;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
   margin-bottom: 12px;
 }
 
@@ -317,7 +323,7 @@
 }
 
 /* =========================================================
-   CATEGORY CARDS ON HOMEPAGE
+   CATEGORY CARDS
    ========================================================= */
 .categories-grid {
   display: grid;
@@ -327,8 +333,8 @@
 }
 
 .category-card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 24px 16px;
   text-align: center;
@@ -340,11 +346,12 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  box-shadow: var(--shadow-sm);
 }
 
 .category-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-gold);
+  border-color: var(--royal-blue);
   box-shadow: var(--shadow-md);
 }
 
@@ -352,8 +359,8 @@
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background-color: var(--primary-olive-light);
-  color: var(--primary-forest);
+  background-color: var(--pale-blue);
+  color: var(--royal-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -361,18 +368,18 @@
 }
 
 .category-card:hover .category-card-icon {
-  background-color: var(--primary-forest);
-  color: var(--accent-gold);
+  background-color: var(--royal-blue);
+  color: var(--white);
 }
 
 .category-card h3 {
   font-size: 1rem;
   margin: 0;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
 }
 
 /* =========================================================
-   FOOD CARDS (CUSTOMER MENU & HOMEPAGE)
+   FOOD CARDS (CUSTOMER INTERFACE)
    ========================================================= */
 .customer-food-grid {
   display: grid;
@@ -381,8 +388,8 @@
 }
 
 .customer-food-card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   overflow: hidden;
   display: flex;
@@ -394,7 +401,7 @@
 .customer-food-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
-  border-color: #d8d4c9;
+  border-color: #cbd5e1;
 }
 
 .food-card-media {
@@ -402,7 +409,7 @@
   width: 100%;
   height: 190px;
   overflow: hidden;
-  background-color: #e9e7e0;
+  background-color: #e2e8f0;
 }
 
 .food-card-media img {
@@ -420,7 +427,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: rgba(24, 61, 50, 0.9);
+  background: rgba(11, 37, 69, 0.9);
   backdrop-filter: blur(4px);
   color: var(--white);
   padding: 4px 10px;
@@ -434,7 +441,7 @@
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(11, 37, 69, 0.75);
   backdrop-filter: blur(4px);
   color: #f6e05e;
   padding: 3px 8px;
@@ -456,7 +463,7 @@
 .food-card-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
   margin-bottom: 6px;
   font-family: 'Playfair Display', serif;
 }
@@ -483,7 +490,7 @@
 .food-price-text {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
 }
 
 .food-availability-text {
@@ -492,11 +499,11 @@
 }
 
 .food-availability-text.in-stock {
-  color: #276749;
+  color: var(--success);
 }
 
 .food-availability-text.out-of-stock {
-  color: #c53030;
+  color: var(--danger);
 }
 
 .food-card-actions {
@@ -509,10 +516,10 @@
 }
 
 /* =========================================================
-   SPECIAL OFFERS BANNER
+   SPECIAL OFFERS BANNER (BLUE GRADIENT)
    ========================================================= */
 .special-offers-banner {
-  background: linear-gradient(135deg, var(--accent-terracotta) 0%, #a3502d 100%);
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--deep-blue) 100%);
   border-radius: var(--radius-lg);
   padding: 40px;
   color: var(--white);
@@ -550,8 +557,8 @@
 }
 
 .testimonial-card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-sm);
@@ -563,7 +570,7 @@
 .testimonial-quote {
   font-style: italic;
   font-size: 0.95rem;
-  color: var(--text-charcoal);
+  color: var(--text-primary);
   margin-bottom: 20px;
   line-height: 1.6;
 }
@@ -584,7 +591,7 @@
 .testimonial-author h4 {
   font-size: 0.92rem;
   margin: 0;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
 }
 
 .testimonial-author p {
@@ -604,8 +611,8 @@
 }
 
 .cart-items-card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 24px;
   box-shadow: var(--shadow-sm);
@@ -616,7 +623,7 @@
   align-items: center;
   gap: 20px;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(233, 231, 224, 0.8);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cart-item-row:last-child {
@@ -638,7 +645,7 @@
 .cart-item-name {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
   margin-bottom: 4px;
 }
 
@@ -649,7 +656,7 @@
 
 .cart-item-notes {
   font-size: 0.78rem;
-  color: var(--accent-terracotta);
+  color: var(--royal-blue);
   margin-top: 4px;
 }
 
@@ -663,32 +670,33 @@
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  border: 1px solid var(--border-grey);
-  background: var(--surface-alt);
+  border: 1px solid var(--border-color);
+  background: var(--pale-blue);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  color: var(--text-charcoal);
+  color: var(--primary-blue);
   transition: all var(--transition-fast);
 }
 
 .cart-qty-btn:hover {
-  background-color: var(--primary-forest);
+  background-color: var(--royal-blue);
   color: var(--white);
+  border-color: var(--royal-blue);
 }
 
 .cart-item-total {
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
   min-width: 100px;
   text-align: right;
 }
 
 .cart-summary-card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 28px;
   box-shadow: var(--shadow-sm);
@@ -699,9 +707,9 @@
 .cart-summary-title {
   font-size: 1.3rem;
   font-family: 'Playfair Display', serif;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
   margin-bottom: 20px;
-  border-bottom: 1px solid var(--border-grey);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 12px;
 }
 
@@ -717,10 +725,10 @@
   justify-content: space-between;
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 2px dashed var(--border-grey);
+  border-top: 2px dashed var(--border-color);
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primary-forest);
+  color: var(--primary-blue);
 }
 
 /* =========================================================
@@ -734,8 +742,8 @@
 }
 
 .checkout-form-card {
-  background-color: var(--card-ivory);
-  border: 1px solid var(--border-grey);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 32px;
   box-shadow: var(--shadow-sm);
@@ -750,9 +758,9 @@
 
 .dining-type-btn {
   padding: 14px;
-  border: 2px solid var(--border-grey);
+  border: 2px solid var(--border-color);
   border-radius: var(--radius-md);
-  background: var(--surface-alt);
+  background: var(--pale-blue);
   text-align: center;
   font-weight: 700;
   font-size: 0.9rem;
@@ -762,17 +770,17 @@
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  color: var(--text-charcoal);
+  color: var(--text-primary);
 }
 
 .dining-type-btn.active {
-  border-color: var(--primary-forest);
-  background-color: var(--primary-olive-light);
-  color: var(--primary-forest);
+  border-color: var(--royal-blue);
+  background-color: var(--light-blue);
+  color: var(--primary-blue);
 }
 
 /* =========================================================
-   ORDER TRACKER PROGRESS BAR
+   ORDER TRACKER PROGRESS BAR (BLUE THEME)
    ========================================================= */
 .order-tracker-container {
   padding: 24px 0;
@@ -791,7 +799,7 @@
   left: 30px;
   right: 30px;
   height: 4px;
-  background-color: var(--border-grey);
+  background-color: var(--border-color);
   z-index: 1;
 }
 
@@ -800,7 +808,7 @@
   top: 22px;
   left: 30px;
   height: 4px;
-  background-color: var(--primary-forest);
+  background-color: var(--royal-blue);
   z-index: 2;
   transition: width 0.4s ease;
 }
@@ -820,27 +828,27 @@
   height: 44px;
   border-radius: 50%;
   background-color: var(--white);
-  border: 3px solid var(--border-grey);
+  border: 3px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
+  color: var(--text-muted);
   font-weight: 700;
   margin-bottom: 8px;
   transition: all var(--transition-fast);
 }
 
 .tracker-step-node.completed .tracker-node-circle {
-  background-color: var(--primary-forest);
-  border-color: var(--primary-forest);
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
   color: var(--white);
 }
 
 .tracker-step-node.active .tracker-node-circle {
-  background-color: var(--accent-gold);
-  border-color: var(--primary-forest);
-  color: var(--primary-forest);
-  box-shadow: 0 0 0 4px rgba(198, 161, 91, 0.35);
+  background-color: var(--royal-blue);
+  border-color: var(--deep-blue);
+  color: var(--white);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
 }
 
 .tracker-step-label {
@@ -851,15 +859,15 @@
 
 .tracker-step-node.completed .tracker-step-label,
 .tracker-step-node.active .tracker-step-label {
-  color: var(--primary-forest);
+  color: var(--primary-blue);
   font-weight: 700;
 }
 
 /* =========================================================
-   CUSTOMER FOOTER
+   CUSTOMER FOOTER (DEEP NAVY BLUE: #0B2545)
    ========================================================= */
 .customer-footer {
-  background-color: var(--primary-forest);
+  background-color: var(--deep-blue);
   color: var(--white);
   padding: 60px 24px 30px;
   margin-top: 60px;
@@ -886,14 +894,14 @@
 
 .footer-col h4 {
   font-size: 1rem;
-  color: var(--accent-gold);
+  color: var(--light-blue);
   margin-bottom: 16px;
   font-family: 'Playfair Display', serif;
   letter-spacing: 0.5px;
 }
 
 .footer-col p {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -908,14 +916,14 @@
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 0.9rem;
   transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
-  color: var(--accent-gold);
+  color: var(--light-blue);
 }
 
 .footer-bottom {
@@ -925,8 +933,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.65);
   flex-wrap: wrap;
   gap: 12px;
 }
-

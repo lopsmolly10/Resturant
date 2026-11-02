@@ -94,7 +94,7 @@ export default function CustomerNavbar() {
                     right: 0,
                     top: 'calc(100% + 8px)',
                     width: '200px',
-                    backgroundColor: 'var(--card-ivory)',
+                    backgroundColor: 'var(--white)',
                     border: '1px solid var(--border-grey)',
                     borderRadius: 'var(--radius-md)',
                     boxShadow: 'var(--shadow-lg)',
@@ -103,7 +103,7 @@ export default function CustomerNavbar() {
                   }}
                 >
                   <div style={{ padding: '8px 12px', borderBottom: '1px solid var(--border-grey)' }}>
-                    <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--primary-forest)' }}>
+                    <div style={{ fontWeight: 700, fontSize: '0.9rem', color: 'var(--primary-blue)' }}>
                       {customerUser.name}
                     </div>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
@@ -183,7 +183,7 @@ export default function CustomerNavbar() {
       {mobileMenuOpen && (
         <div
           style={{
-            backgroundColor: 'var(--card-ivory)',
+            backgroundColor: 'var(--white)',
             borderBottom: '1px solid var(--border-grey)',
             padding: '20px 24px',
             display: 'flex',

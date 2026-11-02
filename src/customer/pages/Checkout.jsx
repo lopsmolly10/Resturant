@@ -71,7 +71,7 @@ export default function Checkout() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            color: 'var(--primary-forest)',
+            color: 'var(--primary-blue)',
             fontWeight: 600,
             fontSize: '0.92rem',
             marginBottom: '24px',
@@ -81,7 +81,7 @@ export default function Checkout() {
           <ArrowLeft size={18} /> Back to Cart
         </Link>
 
-        <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', marginBottom: '8px' }}>
+        <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', marginBottom: '8px' }}>
           Checkout & Dining Information
         </h1>
         <p style={{ color: 'var(--text-muted)', marginBottom: '32px' }}>
@@ -130,7 +130,7 @@ export default function Checkout() {
               {/* Conditional Location Details */}
               {deliveryType === 'Dine-In' && (
                 <div style={{ backgroundColor: 'var(--surface-alt)', padding: '18px', borderRadius: 'var(--radius-md)', marginBottom: '24px' }}>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-forest)', marginBottom: '12px' }}>
+                  <h4 style={{ fontSize: '0.95rem', color: 'var(--deep-blue)', marginBottom: '12px' }}>
                     Table Location:
                   </h4>
                   <div className="form-row">
@@ -170,7 +170,7 @@ export default function Checkout() {
 
               {deliveryType === 'Delivery' && (
                 <div style={{ backgroundColor: 'var(--surface-alt)', padding: '18px', borderRadius: 'var(--radius-md)', marginBottom: '24px' }}>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-forest)', marginBottom: '12px' }}>
+                  <h4 style={{ fontSize: '0.95rem', color: 'var(--deep-blue)', marginBottom: '12px' }}>
                     Delivery Destination:
                   </h4>
                   <div className="form-group" style={{ margin: 0 }}>
@@ -262,7 +262,7 @@ export default function Checkout() {
                     <div>
                       <strong>{it.quantity}x {it.name}</strong>
                       {it.notes && (
-                        <div style={{ fontSize: '0.74rem', color: 'var(--accent-terracotta)' }}>
+                        <div style={{ fontSize: '0.74rem', color: 'var(--royal-blue)', fontWeight: 600 }}>
                           {it.notes}
                         </div>
                       )}

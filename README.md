@@ -8,18 +8,24 @@ A comprehensive, modern, and fully integrated **Restaurant Information System (R
 
 ---
 
-## 🎨 Professional Restaurant Palette
+## 🎨 Official Blue Colour Palette
 
 | Token | Colour Name | Hex Code | Purpose |
 | :--- | :--- | :--- | :--- |
-| **Primary** | Deep Forest Green | `#183D32` | Headings, hero headers, buttons, sidebar |
-| **Accent** | Olive Green | `#496B50` | Role badges, section highlights, active state |
-| **Background**| Warm Cream | `#F8F5EF` | Page backgrounds, canvas body |
-| **Card** | Soft Ivory | `#FFFDF8` | Cards, food containers, checkout forms |
-| **Secondary**| Terracotta | `#C66B45` | Secondary CTAs, sale tags, warning badges |
-| **Highlight**| Muted Gold | `#C6A15B` | Star ratings, VIP tiers, tracker milestones |
-| **Text** | Charcoal | `#292D2B` | Body copy, crisp readability |
-| **Border** | Soft Grey | `#E9E7E0` | Dividers, card borders, table lines |
+| **Primary Blue** | Primary Navy Blue | `#123B66` | Secondary buttons, prominent headers, card borders |
+| **Deep Blue** | Deep Navy Blue | `#0B2545` | Main navigation bar, admin sidebar, footer, brand background |
+| **Royal Blue** | Royal Blue | `#2563EB` | Primary action buttons, active navigation indicators, key highlights |
+| **Medium Blue** | Medium Blue | `#3B82F6` | Hover states, secondary highlights, accents |
+| **Light Blue** | Light Blue | `#DBEAFE` | Selected info panels, active badges, tags |
+| **Pale Blue** | Very Light Blue | `#EFF6FF` | Table header tints, alerts, soft highlight backgrounds |
+| **White** | Pure White | `#FFFFFF` | Cards, forms, content surfaces |
+| **Soft Background** | Soft Blue Canvas | `#F5F8FC` | Global page body background |
+| **Dark Text** | Navy Slate | `#172B4D` | Primary typography & headings |
+| **Muted Text** | Slate Grey | `#64748B` | Secondary copy, sub-labels, timestamps |
+| **Border Grey** | Subtle Border | `#E2E8F0` | Dividers, card borders, table lines |
+| **Success** | Success Green | `#16A34A` | Completed status, paid badges, positive KPIs |
+| **Warning** | Warning Amber | `#D97706` | Pending alerts, low-stock warnings |
+| **Error / Danger** | Error Red | `#DC2626` | Cancelled status, destructive actions |
 
 ---
 

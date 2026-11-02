@@ -116,8 +116,9 @@ export default function Payments() {
     {
       key: 'id',
       label: 'Transaction ID',
+      width: '140px',
       render: (r) => (
-        <span style={{ fontWeight: 700, color: 'var(--primary-forest)' }}>
+        <span style={{ fontWeight: 700, color: 'var(--primary-blue)' }}>
           {r.id}
         </span>
       )
@@ -125,8 +126,9 @@ export default function Payments() {
     {
       key: 'orderId',
       label: 'Order ID',
+      width: '120px',
       render: (r) => (
-        <span style={{ fontWeight: 600, color: 'var(--accent-terracotta)' }}>
+        <span style={{ fontWeight: 600, color: 'var(--royal-blue)' }}>
           {r.orderId}
         </span>
       )
@@ -161,7 +163,7 @@ export default function Payments() {
       key: 'amount',
       label: 'Amount Paid',
       render: (r) => (
-        <span style={{ fontWeight: 800, color: 'var(--primary-forest)', fontSize: '0.95rem' }}>
+        <span style={{ fontWeight: 800, color: 'var(--royal-blue)', fontSize: '0.95rem' }}>
           {formatCurrency(r.amount)}
         </span>
       )

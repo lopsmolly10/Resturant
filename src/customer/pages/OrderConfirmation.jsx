@@ -55,7 +55,7 @@ export default function OrderConfirmation() {
             textAlign: 'center',
             padding: '40px 24px',
             marginBottom: '32px',
-            borderTop: '6px solid var(--primary-forest)'
+            borderTop: '6px solid var(--royal-blue)'
           }}
         >
           <div
@@ -63,13 +63,13 @@ export default function OrderConfirmation() {
               width: '72px',
               height: '72px',
               borderRadius: '50%',
-              backgroundColor: 'var(--status-served-bg)',
-              color: '#276749',
+              backgroundColor: 'rgba(22, 163, 74, 0.12)',
+              color: 'var(--success)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 18px',
-              boxShadow: '0 4px 12px rgba(40, 167, 69, 0.2)'
+              boxShadow: '0 4px 12px rgba(22, 163, 74, 0.2)'
             }}
           >
             <CheckCircle2 size={40} />
@@ -78,8 +78,8 @@ export default function OrderConfirmation() {
           <span
             style={{
               display: 'inline-block',
-              backgroundColor: 'var(--accent-gold-light)',
-              color: '#9c7b37',
+              backgroundColor: 'var(--pale-blue)',
+              color: 'var(--royal-blue)',
               padding: '4px 14px',
               borderRadius: 'var(--radius-full)',
               fontSize: '0.82rem',
@@ -96,7 +96,7 @@ export default function OrderConfirmation() {
             style={{
               fontSize: '2.4rem',
               fontFamily: 'Playfair Display, serif',
-              color: 'var(--primary-forest)',
+              color: 'var(--deep-blue)',
               marginBottom: '10px'
             }}
           >
@@ -119,14 +119,14 @@ export default function OrderConfirmation() {
               fontSize: '0.92rem'
             }}
           >
-            <Clock size={18} color="var(--primary-forest)" />
+            <Clock size={18} color="var(--royal-blue)" />
             <span>Estimated Wait Time: <strong>20 – 30 Minutes</strong></span>
           </div>
         </div>
 
         {/* Live Visual Order Progress Tracker */}
         <div className="card" style={{ marginBottom: '32px', padding: '28px' }}>
-          <h3 style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', marginBottom: '16px' }}>
+          <h3 style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', marginBottom: '16px' }}>
             Live Kitchen & Delivery Status
           </h3>
           <OrderTracker status={activeOrder.status || 'Pending'} orderType={activeOrder.orderType} />
@@ -136,7 +136,7 @@ export default function OrderConfirmation() {
         <div className="card" style={{ padding: '28px', marginBottom: '32px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: '1px solid var(--border-grey)', paddingBottom: '14px' }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--primary-forest)' }}>
+              <h3 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--deep-blue)' }}>
                 Order Summary Breakdown
               </h3>
               <small style={{ color: 'var(--text-muted)' }}>
@@ -165,7 +165,7 @@ export default function OrderConfirmation() {
                 <div>
                   <strong>{it.quantity}x {it.name}</strong>
                   {it.notes && (
-                    <div style={{ fontSize: '0.78rem', color: 'var(--accent-terracotta)' }}>
+                    <div style={{ fontSize: '0.78rem', color: 'var(--royal-blue)', fontWeight: 600 }}>
                       Note: {it.notes}
                     </div>
                   )}
@@ -177,7 +177,7 @@ export default function OrderConfirmation() {
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '14px', borderTop: '2px dashed var(--border-grey)' }}>
             <span style={{ fontSize: '1.1rem', fontWeight: 800 }}>Grand Total:</span>
-            <span style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+            <span style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--royal-blue)' }}>
               {formatCurrency(activeOrder.totalAmount)}
             </span>
           </div>
@@ -200,7 +200,7 @@ export default function OrderConfirmation() {
           <Link to="/customer/menu" className="btn btn-outline btn-lg" style={{ padding: '12px 28px' }}>
             <Utensils size={18} /> Order More Food
           </Link>
-          <Link to="/admin/kitchen" className="btn btn-gold btn-lg" style={{ padding: '12px 28px' }} title="Check how this appears in Kitchen Display System">
+          <Link to="/admin/kitchen" className="btn btn-secondary btn-lg" style={{ padding: '12px 28px' }} title="Check how this appears in Kitchen Display System">
             <ExternalLink size={18} /> View in Staff KDS
           </Link>
         </div>

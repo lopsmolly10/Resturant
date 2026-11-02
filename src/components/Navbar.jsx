@@ -130,13 +130,13 @@ export default function Navbar({ onMobileMenuToggle }) {
           style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.8rem' }}
           title="Open Customer Food Ordering Website"
         >
-          <Globe size={14} color="var(--primary-forest)" />
+          <Globe size={14} color="var(--primary-blue)" />
           <span>Customer Site</span>
         </Link>
 
         {/* Date Display */}
         <div className="date-badge">
-          <Calendar size={15} color="var(--primary-olive)" />
+          <Calendar size={15} color="var(--royal-blue)" />
           <span>{todayFormatted}</span>
         </div>
 
@@ -199,8 +199,8 @@ export default function Navbar({ onMobileMenuToggle }) {
                         justifyContent: 'flex-start',
                         fontSize: '0.85rem',
                         padding: '8px 12px',
-                        background: currentUser.role === r ? 'var(--primary-olive-light)' : 'transparent',
-                        color: currentUser.role === r ? 'var(--primary-forest)' : 'var(--text-charcoal)',
+                        background: currentUser.role === r ? 'var(--pale-blue)' : 'transparent',
+                        color: currentUser.role === r ? 'var(--royal-blue)' : 'var(--text-primary)',
                         fontWeight: currentUser.role === r ? '700' : '500'
                       }}
                       onClick={() => {

@@ -56,7 +56,7 @@ export default function MyOrders() {
         {/* Header Row */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', margin: 0 }}>
+            <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', margin: 0 }}>
               My Order History & Live Tracking
             </h1>
             <p style={{ color: 'var(--text-muted)', margin: '4px 0 0' }}>
@@ -81,7 +81,7 @@ export default function MyOrders() {
             </button>
             <button
               type="button"
-              className={`btn btn-sm ${filterTab === 'Active' ? 'btn-gold' : 'btn-outline'}`}
+              className={`btn btn-sm ${filterTab === 'Active' ? 'btn-primary' : 'btn-outline'}`}
               onClick={() => setFilterTab('Active')}
             >
               Active Orders ({customerOrders.filter(o => o.status === 'Pending' || o.status === 'Preparing' || o.status === 'Ready').length})
@@ -100,9 +100,9 @@ export default function MyOrders() {
         {displayedOrders.length === 0 ? (
           <div className="card" style={{ padding: '60px 24px', textAlign: 'center' }}>
             <div className="empty-state-icon" style={{ margin: '0 auto 16px' }}>
-              <ShoppingBag size={36} color="var(--accent-gold)" />
+              <ShoppingBag size={36} color="var(--royal-blue)" />
             </div>
-            <h3 style={{ fontSize: '1.25rem', color: 'var(--primary-forest)' }}>No orders found</h3>
+            <h3 style={{ fontSize: '1.25rem', color: 'var(--deep-blue)' }}>No orders found</h3>
             <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
               You don't have any orders matching the "{filterTab}" category.
             </p>
@@ -124,12 +124,12 @@ export default function MyOrders() {
                     transition: 'all var(--transition-fast)',
                     borderLeft: `5px solid ${
                       order.status === 'Ready'
-                        ? '#38a169'
+                        ? 'var(--success)'
                         : order.status === 'Preparing'
-                        ? 'var(--accent-gold)'
+                        ? 'var(--royal-blue)'
                         : order.status === 'Cancelled'
-                        ? '#e53e3e'
-                        : 'var(--primary-forest)'
+                        ? 'var(--danger)'
+                        : 'var(--primary-blue)'
                     }`
                   }}
                 >
@@ -147,7 +147,7 @@ export default function MyOrders() {
                   >
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+                        <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary-blue)' }}>
                           #{order.id}
                         </span>
                         <StatusBadge status={order.status} />
@@ -164,11 +164,11 @@ export default function MyOrders() {
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                       <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--primary-forest)' }}>
+                        <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--royal-blue)' }}>
                           {formatCurrency(order.totalAmount)}
                         </div>
                         <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                          {order.paymentMethod} • <span style={{ fontWeight: 600, color: order.paymentStatus === 'Paid' ? '#276749' : '#c05621' }}>{order.paymentStatus}</span>
+                          {order.paymentMethod} • <span style={{ fontWeight: 600, color: order.paymentStatus === 'Paid' ? 'var(--success)' : 'var(--warning)' }}>{order.paymentStatus}</span>
                         </div>
                       </div>
 
@@ -185,7 +185,7 @@ export default function MyOrders() {
 
                   {/* Summary of items on collapsed view */}
                   {!isExpanded && (
-                    <div style={{ marginTop: '12px', fontSize: '0.88rem', color: 'var(--text-charcoal)', borderTop: '1px solid var(--border-grey)', paddingTop: '10px' }}>
+                    <div style={{ marginTop: '12px', fontSize: '0.88rem', color: 'var(--text-primary)', borderTop: '1px solid var(--border-grey)', paddingTop: '10px' }}>
                       <strong>Items: </strong>
                       {order.items.map(it => `${it.name} (x${it.quantity})`).join(', ')}
                     </div>
@@ -194,14 +194,14 @@ export default function MyOrders() {
                   {/* Expanded Detailed View with Live OrderTracker */}
                   {isExpanded && (
                     <div style={{ marginTop: '20px', borderTop: '1px solid var(--border-grey)', paddingTop: '20px' }}>
-                      <h4 style={{ fontSize: '1rem', color: 'var(--primary-forest)', marginBottom: '14px' }}>
+                      <h4 style={{ fontSize: '1rem', color: 'var(--deep-blue)', marginBottom: '14px' }}>
                         Live Kitchen Progress Tracker:
                       </h4>
 
                       <OrderTracker status={order.status} orderType={order.orderType} />
 
                       <div style={{ marginTop: '20px', backgroundColor: 'var(--surface-alt)', borderRadius: 'var(--radius-md)', padding: '16px' }}>
-                        <h5 style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--primary-forest)' }}>
+                        <h5 style={{ margin: '0 0 10px', fontSize: '0.9rem', color: 'var(--deep-blue)' }}>
                           Ordered Dishes Breakdown:
                         </h5>
                         {order.items.map((it, idx) => (
@@ -218,7 +218,7 @@ export default function MyOrders() {
                             <div>
                               <strong>{it.quantity}x {it.name}</strong>
                               {it.notes && (
-                                <span style={{ color: 'var(--accent-terracotta)', fontSize: '0.78rem', marginLeft: '8px' }}>
+                                <span style={{ color: 'var(--royal-blue)', fontSize: '0.78rem', marginLeft: '8px', fontWeight: 600 }}>
                                   ({it.notes})
                                 </span>
                               )}

@@ -78,7 +78,7 @@ export default function KitchenManagement() {
             </button>
             <button
               type="button"
-              className={`btn btn-sm ${activeFilter === 'Preparing' ? 'btn-gold' : 'btn-outline'}`}
+              className={`btn btn-sm ${activeFilter === 'Preparing' ? 'btn-primary' : 'btn-outline'}`}
               onClick={() => setActiveFilter('Preparing')}
             >
               Cooking / Preparing ({kitchenOrders.filter(o => o.status === 'Preparing').length})
@@ -124,10 +124,10 @@ export default function KitchenManagement() {
             const isReady = order.status === 'Ready';
 
             const cardBorderColor = isPending
-              ? 'var(--accent-terracotta)'
+              ? 'var(--primary-blue)'
               : isPreparing
-              ? 'var(--accent-gold)'
-              : '#38a169';
+              ? 'var(--royal-blue)'
+              : 'var(--success)';
 
             return (
               <div
@@ -144,7 +144,7 @@ export default function KitchenManagement() {
                 {/* Ticket Header */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
                   <div>
-                    <h3 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--primary-forest)' }}>
+                    <h3 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--primary-blue)' }}>
                       {order.id}
                     </h3>
                     <div style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--text-charcoal)', marginTop: '2px' }}>
@@ -180,12 +180,12 @@ export default function KitchenManagement() {
                         }}
                       >
                         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <span style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--primary-forest)' }}>
+                          <span style={{ fontWeight: 700, fontSize: '0.92rem', color: 'var(--primary-blue)' }}>
                             {item.quantity} × {item.name}
                           </span>
                         </div>
                         {item.notes && (
-                          <span style={{ fontSize: '0.78rem', color: 'var(--accent-terracotta)', fontWeight: 600, marginTop: '2px' }}>
+                          <span style={{ fontSize: '0.78rem', color: 'var(--royal-blue)', fontWeight: 600, marginTop: '2px' }}>
                             ★ {item.notes}
                           </span>
                         )}
@@ -198,12 +198,12 @@ export default function KitchenManagement() {
                 {order.specialNotes && (
                   <div
                     style={{
-                      background: '#fffaf0',
-                      borderLeft: '3px solid #dd6b20',
+                      background: 'var(--pale-blue)',
+                      borderLeft: '3px solid var(--royal-blue)',
                       padding: '8px 12px',
                       borderRadius: '4px',
                       fontSize: '0.78rem',
-                      color: '#9c4221',
+                      color: 'var(--deep-blue)',
                       marginBottom: '14px'
                     }}
                   >
@@ -215,7 +215,7 @@ export default function KitchenManagement() {
                 <div style={{ marginTop: 'auto', paddingTop: '10px' }}>
                   {isPending && (
                     <button
-                      className="btn btn-secondary"
+                      className="btn btn-primary"
                       style={{ width: '100%' }}
                       onClick={() => handleAdvance(order)}
                     >
@@ -225,7 +225,7 @@ export default function KitchenManagement() {
 
                   {isPreparing && (
                     <button
-                      className="btn btn-gold"
+                      className="btn btn-secondary"
                       style={{ width: '100%' }}
                       onClick={() => handleAdvance(order)}
                     >

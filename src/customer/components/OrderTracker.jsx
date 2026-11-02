@@ -102,8 +102,8 @@ export default function OrderTracker({ status = 'Pending', orderType = 'Dine-In'
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Clock size={16} color="var(--primary-forest)" />
-          <span>Status: <strong style={{ color: 'var(--primary-forest)' }}>{status}</strong></span>
+          <Clock size={16} color="var(--royal-blue)" />
+          <span>Status: <strong style={{ color: 'var(--royal-blue)' }}>{status}</strong></span>
         </div>
         <div>
           Estimated Time: <strong>15 – 25 Minutes</strong>

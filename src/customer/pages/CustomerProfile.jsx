@@ -50,7 +50,7 @@ export default function CustomerProfile() {
   return (
     <div className="customer-profile-page">
       <div className="customer-section" style={{ maxWidth: '820px' }}>
-        <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', marginBottom: '8px' }}>
+        <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', marginBottom: '8px' }}>
           My Guest Profile
         </h1>
         <p style={{ color: 'var(--text-muted)', marginBottom: '32px' }}>
@@ -61,7 +61,7 @@ export default function CustomerProfile() {
         <div
           className="card"
           style={{
-            background: 'linear-gradient(135deg, var(--primary-forest) 0%, #0d261e 100%)',
+            background: 'linear-gradient(135deg, var(--deep-blue) 0%, var(--primary-blue) 100%)',
             color: 'var(--white)',
             padding: '28px 32px',
             marginBottom: '32px',
@@ -75,9 +75,9 @@ export default function CustomerProfile() {
           <div>
             <span
               style={{
-                backgroundColor: 'rgba(198, 161, 91, 0.25)',
-                color: 'var(--accent-gold)',
-                border: '1px solid rgba(198, 161, 91, 0.4)',
+                backgroundColor: 'rgba(37, 99, 235, 0.25)',
+                color: 'var(--light-blue)',
+                border: '1px solid rgba(147, 197, 253, 0.4)',
                 padding: '4px 12px',
                 borderRadius: 'var(--radius-full)',
                 fontSize: '0.78rem',
@@ -96,7 +96,7 @@ export default function CustomerProfile() {
           </div>
 
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-gold)' }}>
+            <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--light-blue)' }}>
               {customerOrders.length} Orders
             </div>
             <Link to="/my-orders" style={{ color: 'var(--white)', fontSize: '0.85rem', textDecoration: 'underline' }}>
@@ -107,7 +107,7 @@ export default function CustomerProfile() {
 
         {/* Edit Profile Form */}
         <div className="card" style={{ padding: '32px', marginBottom: '28px' }}>
-          <h3 style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', marginBottom: '20px' }}>
+          <h3 style={{ fontSize: '1.25rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', marginBottom: '20px' }}>
             Personal Details
           </h3>
 

@@ -39,12 +39,12 @@ export default function ShoppingCart() {
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 20px',
-            color: 'var(--accent-gold)'
+            color: 'var(--royal-blue)'
           }}
         >
           <ShoppingBag size={42} />
         </div>
-        <h2 style={{ fontSize: '2rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)' }}>
+        <h2 style={{ fontSize: '2rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)' }}>
           Your Cart is Empty
         </h2>
         <p style={{ color: 'var(--text-muted)', maxWidth: '420px', margin: '10px auto 28px' }}>
@@ -62,7 +62,7 @@ export default function ShoppingCart() {
       <div className="customer-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--primary-forest)', margin: 0 }}>
+            <h1 style={{ fontSize: '2.4rem', fontFamily: 'Playfair Display, serif', color: 'var(--deep-blue)', margin: 0 }}>
               Shopping Cart
             </h1>
             <p style={{ color: 'var(--text-muted)', margin: '4px 0 0' }}>

@@ -71,7 +71,7 @@ export default function FoodDetails() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '8px',
-            color: 'var(--primary-forest)',
+            color: 'var(--primary-blue)',
             fontWeight: 600,
             fontSize: '0.92rem',
             marginBottom: '28px',
@@ -88,7 +88,7 @@ export default function FoodDetails() {
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))',
             gap: '48px',
             alignItems: 'start',
-            backgroundColor: 'var(--card-ivory)',
+            backgroundColor: 'var(--white)',
             border: '1px solid var(--border-grey)',
             borderRadius: 'var(--radius-lg)',
             padding: '36px',
@@ -128,7 +128,7 @@ export default function FoodDetails() {
               style={{
                 fontSize: '2.4rem',
                 fontFamily: 'Playfair Display, serif',
-                color: 'var(--primary-forest)',
+                color: 'var(--deep-blue)',
                 margin: '0 0 12px',
                 lineHeight: 1.2
               }}
@@ -140,7 +140,7 @@ export default function FoodDetails() {
               style={{
                 fontSize: '1.85rem',
                 fontWeight: 800,
-                color: 'var(--primary-forest)',
+                color: 'var(--royal-blue)',
                 marginBottom: '16px'
               }}
             >
@@ -164,11 +164,11 @@ export default function FoodDetails() {
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Clock size={16} color="var(--primary-forest)" />
+                <Clock size={16} color="var(--royal-blue)" />
                 <span>Prep Time: <strong>{item.prepTime || '15-20 mins'}</strong></span>
               </div>
               <div>
-                Availability: <strong style={{ color: isAvailable ? '#276749' : '#c53030' }}>
+                Availability: <strong style={{ color: isAvailable ? 'var(--success)' : 'var(--danger)' }}>
                   {isAvailable ? 'In Stock (Ready to cook)' : 'Sold Out for Today'}
                 </strong>
               </div>
@@ -176,7 +176,7 @@ export default function FoodDetails() {
 
             {/* Ingredients */}
             <div style={{ marginBottom: '24px' }}>
-              <h4 style={{ fontSize: '1rem', color: 'var(--primary-forest)', marginBottom: '8px' }}>
+              <h4 style={{ fontSize: '1rem', color: 'var(--deep-blue)', marginBottom: '8px' }}>
                 Ingredients & Accompaniments:
               </h4>
               <ul style={{ paddingLeft: '20px', color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6' }}>
@@ -255,7 +255,7 @@ export default function FoodDetails() {
 
             {addedSuccess && (
               <div style={{ marginTop: '14px', textAlign: 'center' }}>
-                <Link to="/cart" style={{ color: 'var(--primary-forest)', fontWeight: 700, fontSize: '0.88rem' }}>
+                <Link to="/cart" style={{ color: 'var(--royal-blue)', fontWeight: 700, fontSize: '0.88rem' }}>
                   Proceed to Shopping Cart ➔
                 </Link>
               </div>
@@ -267,7 +267,7 @@ export default function FoodDetails() {
         {relatedItems.length > 0 && (
           <div>
             <div className="section-head" style={{ textAlign: 'left', margin: '0 0 24px' }}>
-              <h3 style={{ fontSize: '1.6rem', color: 'var(--primary-forest)' }}>
+              <h3 style={{ fontSize: '1.6rem', color: 'var(--deep-blue)' }}>
                 You Might Also Enjoy
               </h3>
             </div>
